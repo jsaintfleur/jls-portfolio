@@ -89,3 +89,56 @@ Decision:
 - Tableau: dedicated page with real launch cards and full public profile link.
 - Audit Strategy: compact GitHub classification section.
 - SEO: revised metadata and social preview language.
+
+## Image Strategy Audit
+
+Current portfolio images:
+- Product screenshots: EconOS, Compet 2026, ShelterShield, CareShed, PulseCredit, TransitShield, Marketplace Compass.
+- Tableau previews: 12 optimized WebP thumbnails captured from the public Tableau dashboards.
+- Social preview: generated portfolio image.
+- Favicon/wordmark: generated vector mark.
+
+Images preserved:
+- All live product screenshots because they demonstrate actual deployed work.
+- Tableau previews because they are captured from Jean-Luc's public Tableau profile.
+- EconOS as the dominant product image because it is the portfolio centerpiece.
+
+Images replaced or improved:
+- The prior narrow hero thumbnail strip was replaced with a clearer composition: EconOS primary, plus Compet 2026, Tableau, and ShelterShield supporting visuals.
+- Tableau launch cards were upgraded from text-only cards to preview-image cards with view counts.
+
+Missing image recommendations:
+- Add an owned professional portrait for the hero/About section.
+- Add owned working/presenting, community-development, football, travel/culture, Brooklyn, or Haiti images only if Jean-Luc owns or has permission to publish them.
+- Add case-study-specific architecture diagrams for AI workflow and deeper product case studies when those pages are built.
+
+Hero image concept:
+- Use the alternate PRD-approved approach until a professional portrait is available: a product composition featuring EconOS, Compet 2026, Tableau, and geospatial/housing work.
+
+Featured-project screenshot plan:
+- Keep current project-card screenshots at consistent 16:9 or 16:10 ratios.
+- Refresh screenshots when product UIs change materially.
+- Avoid using screenshots with debug controls, confidential data, or browser clutter.
+
+Tableau thumbnail plan:
+- Use optimized WebP thumbnails generated from Tableau Public pages.
+- Keep launch-card previews instead of heavy embeds unless embed performance remains excellent.
+- Link to Tableau Public for full interactivity.
+
+Skills-image mapping:
+- Economics: EconOS.
+- Forecasting: PulseCredit and EconOS.
+- Tableau / BI: Superstore Profit, NYS Nonprofit Database, Traffic Ticket Heat Map.
+- Product Design: Compet 2026.
+- Geospatial Analytics: ShelterShield, CareShed, TransitShield, Tableau map dashboards.
+- Business Intelligence: Marketplace Compass and Tableau dashboards.
+- Community Development: ShelterShield, CareShed, NYS nonprofit Tableau dashboards.
+
+Image licensing review:
+- Product screenshots are from Jean-Luc's deployed apps.
+- Tableau previews are from Jean-Luc's Tableau Public profile.
+- No Google Images, unverified stock photography, copyrighted match photography, or generic AI imagery was added.
+
+Alt-text inventory:
+- Meaningful product, hero, and Tableau preview images include descriptive alt text.
+- Decorative or future imagery should use empty alt text only when it adds no content.
