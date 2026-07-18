@@ -47,7 +47,7 @@
   :root.dark header{background:rgba(15,23,42,.94)}
   @media (prefers-color-scheme:dark){:root:not(.light) header{background:rgba(15,23,42,.94)}}
   .nav{height:60px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-  .wordmark{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;letter-spacing:-.02em}
+  .wordmark{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:-.02em}
   .wordmark::before{content:"";width:28px;height:28px;border-radius:9px;background:linear-gradient(135deg,var(--brand-700),var(--brand-500));box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
   nav{display:flex;align-items:center;gap:20px}
   nav a{font-size:14px;color:var(--soft);text-decoration:none;font-weight:650}
@@ -60,35 +60,19 @@
   :focus-visible{outline:3px solid color-mix(in srgb,var(--brand-600) 72%,white);outline-offset:3px;border-radius:8px}
   .hero{position:relative;overflow:hidden;padding:44px 0 22px}
   .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(330px,.92fr);gap:38px;align-items:center}
-  .motif{position:absolute;inset:18px max(24px,calc((100vw - 1120px)/2)) auto auto;width:min(520px,42vw);height:330px;opacity:.72;pointer-events:none}
-  .motif::before,.motif::after{content:"";position:absolute;inset:0;border-radius:28px}
-  .motif::before{background:
-    linear-gradient(90deg,rgba(20,45,140,.10) 1px,transparent 1px),
-    linear-gradient(rgba(20,45,140,.10) 1px,transparent 1px);
-    background-size:34px 34px;mask-image:radial-gradient(circle at 55% 45%,#000 0 58%,transparent 78%);animation:gridDrift 18s linear infinite}
-  .motif::after{background:
-    radial-gradient(circle at 20% 22%,rgba(127,154,224,.36),transparent 28%),
-    radial-gradient(circle at 78% 72%,rgba(20,45,140,.22),transparent 30%),
-    linear-gradient(135deg,transparent 20%,rgba(20,45,140,.10),transparent 70%);
-    filter:blur(.2px)}
-  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--brand-text)}
-  .portfolio-kicker{display:inline-flex;align-items:center;gap:9px;margin:0 0 14px;border:1px solid color-mix(in srgb,var(--brand-600) 24%,var(--line));background:color-mix(in srgb,var(--brand-50) 74%,var(--panel));color:var(--brand-text);border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
-  :root.dark .portfolio-kicker{background:color-mix(in srgb,var(--brand-900) 42%,var(--panel));border-color:color-mix(in srgb,var(--brand-300) 28%,var(--line))}
-  h1{font-size:clamp(42px,6vw,72px);line-height:.93;letter-spacing:-.055em;margin:8px 0 0;max-width:10.5ch}
-  .lede{margin:16px 0 0;max-width:56ch;color:var(--soft);font-size:17px}
-  .impact-line{margin:16px 0 0;display:flex;flex-wrap:wrap;gap:8px;color:var(--soft);font-size:13px;font-weight:800}
-  .impact-line span{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:color-mix(in srgb,var(--panel) 78%,transparent);border-radius:999px;padding:6px 10px}
-  .impact-line span::before{content:"";width:7px;height:7px;border-radius:999px;background:var(--brand-600)}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brand-text)}
+  h1{font-size:clamp(38px,5vw,58px);line-height:1.04;letter-spacing:-.03em;margin:10px 0 0;max-width:18ch}
+  .lede{margin:16px 0 0;max-width:58ch;color:var(--soft);font-size:17px}
   .cta{margin-top:22px;display:flex;gap:11px;flex-wrap:wrap}
-  .btn{min-height:42px;display:inline-flex;align-items:center;justify-content:center;border-radius:11px;padding:10px 16px;border:1px solid transparent;text-decoration:none;font-size:14px;font-weight:800;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+  .btn{min-height:42px;display:inline-flex;align-items:center;justify-content:center;border-radius:11px;padding:10px 16px;border:1px solid transparent;text-decoration:none;font-size:14px;font-weight:700;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
   .btn:hover{transform:translateY(-1px)}
   .btn-primary{background:var(--brand-600);color:#fff;box-shadow:0 12px 28px rgba(20,45,140,.22)}
   .btn-secondary{background:var(--panel);border-color:var(--line);color:var(--soft)}
-  .role-line{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;color:var(--brand-text);font-size:13px;font-weight:900}
+  .role-line{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;color:var(--brand-text);font-size:13px;font-weight:750}
   .role-line span{border:1px solid color-mix(in srgb,var(--brand-600) 22%,var(--line));background:color-mix(in srgb,var(--brand-50) 68%,var(--panel));border-radius:999px;padding:5px 9px}
   :root.dark .role-line span{background:color-mix(in srgb,var(--brand-900) 32%,var(--panel))}
   .proof-card{border:1px solid var(--line);border-radius:22px;background:color-mix(in srgb,var(--panel) 84%,transparent);box-shadow:var(--shadow-soft);padding:18px;backdrop-filter:blur(10px)}
-  .proof-title{margin:0 0 12px;color:var(--soft);font-size:13px;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
+  .proof-title{margin:0 0 12px;color:var(--soft);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
   .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
   .stat{min-height:82px;border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:14px}
   .stat b{display:block;font-size:32px;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.04em}
@@ -100,9 +84,6 @@
   .hero-composition-side{display:grid;gap:8px}
   .hero-composition-side img{aspect-ratio:16/10}
   .hero-composition figcaption{margin-top:10px;color:var(--muted);font-size:12.5px}
-  .preview-mosaic{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
-  .preview-mosaic img{width:100%;aspect-ratio:1/1.08;object-fit:cover;border:1px solid var(--line);border-radius:10px;background:var(--inset);box-shadow:0 8px 18px rgba(15,23,42,.08)}
-  .preview-mosaic img:nth-child(even){transform:translateY(5px)}
   .proof-list{display:grid;gap:8px;margin:14px 0 0;padding:14px 0 0;border-top:1px solid var(--line);color:var(--soft);font-size:13px}
   .proof-list span{display:flex;gap:8px;align-items:flex-start}
   .proof-list span::before{content:"";flex:0 0 auto;width:8px;height:8px;margin-top:6px;border-radius:3px;background:var(--brand-600)}
@@ -115,9 +96,9 @@
   .skill-card img{width:100%;height:76px;object-fit:cover;border:1px solid var(--line);border-radius:12px;background:var(--inset);margin-bottom:12px}
   .skill-card h3{margin:0;font-size:18px;letter-spacing:-.02em}
   .skill-card p{margin:8px 0 0;color:var(--soft);font-size:13.5px}
-  .skill-card a{color:var(--brand-text);font-weight:900;text-decoration:none}
+  .skill-card a{color:var(--brand-text);font-weight:750;text-decoration:none}
   .skill-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
-  .skill-tags span{border:1px solid var(--line);background:color-mix(in srgb,var(--panel) 82%,transparent);border-radius:999px;padding:4px 8px;color:var(--soft);font-size:11.5px;font-weight:800}
+  .skill-tags span{border:1px solid var(--line);background:color-mix(in srgb,var(--panel) 82%,transparent);border-radius:999px;padding:4px 8px;color:var(--soft);font-size:11.5px;font-weight:700}
   .gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
   .product{grid-column:span 2;position:relative;display:flex;flex-direction:column;min-height:100%;border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:12px;box-shadow:0 1px 2px rgba(15,23,42,.04);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
   .product:nth-last-child(1):nth-child(odd){grid-column:3/span 2}
@@ -126,14 +107,14 @@
   .thumb::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
   .thumb img{width:100%;height:100%;object-fit:cover}
   .accent{height:4px;background:var(--accent);border-radius:999px;margin:14px 0 12px}
-  .sector{color:var(--brand-text);font-size:11px;font-weight:850;letter-spacing:.13em;text-transform:uppercase}
+  .sector{color:var(--brand-text);font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
   .product h3{font-size:20px;letter-spacing:-.03em;margin:6px 0 3px}
-  .tag{margin:0;color:var(--soft);font-size:14px;font-style:italic}
+  .tag{margin:0;color:var(--soft);font-size:14px}
   .outcome{margin:8px 0 0;color:var(--soft);font-size:13.5px}
   .badges{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 14px}
   .badge{border-radius:999px;background:var(--inset);border:1px solid var(--line);color:var(--soft);font-size:11.5px;font-weight:700;padding:4px 9px}
   .links{display:flex;gap:9px;margin-top:auto}
-  .links a{border:1px solid var(--line);border-radius:10px;padding:8px 11px;text-decoration:none;font-size:13px;font-weight:800;color:var(--soft)}
+  .links a{border:1px solid var(--line);border-radius:10px;padding:8px 11px;text-decoration:none;font-size:13px;font-weight:700;color:var(--soft)}
   .links .live{background:var(--accent);border-color:transparent;color:#fff}
   .spotlight{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center;border:1px solid color-mix(in srgb,var(--brand-600) 24%,var(--line));border-radius:22px;background:linear-gradient(135deg,color-mix(in srgb,var(--brand-50) 76%,var(--panel)),var(--panel));padding:18px;margin-bottom:18px;box-shadow:var(--shadow-soft)}
   :root.dark .spotlight{background:linear-gradient(135deg,color-mix(in srgb,var(--brand-900) 28%,var(--panel)),var(--panel))}
@@ -151,7 +132,7 @@
   .dot.half{opacity:.42}
   .cap-grid{display:grid;grid-template-columns:minmax(170px,1.3fr) repeat(7,minmax(60px,1fr));gap:7px;align-items:stretch}
   .cap-cell,.cap-head,.cap-row{border-radius:10px;padding:8px;background:var(--inset);font-size:12.5px}
-  .cap-head{color:var(--muted);font-weight:800;text-align:center}
+  .cap-head{color:var(--muted);font-weight:700;text-align:center}
   .cap-row{font-weight:750;color:var(--soft)}
   .cap-cell{position:relative;min-height:32px;display:grid;place-items:center;color:transparent}
   .cap-cell.yes{background:linear-gradient(135deg,var(--brand-600),var(--brand-500))}
@@ -163,27 +144,22 @@
   .panel h3{margin:0 0 10px;font-size:20px;letter-spacing:-.02em}
   .panel ul{margin:0;padding-left:20px;color:var(--soft)}
   .panel li{margin:8px 0}
-  .audit-list{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  .audit-list .panel{padding:18px}
-  .audit-list h3{font-size:18px}
-  .audit-list p{color:var(--soft);font-size:13.5px;margin:0}
   .tableau-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-  .tableau-actions a{border:1px solid var(--line);border-radius:10px;padding:8px 11px;text-decoration:none;font-size:13px;font-weight:900;color:var(--soft)}
+  .tableau-actions a{border:1px solid var(--line);border-radius:10px;padding:8px 11px;text-decoration:none;font-size:13px;font-weight:750;color:var(--soft)}
   .tableau-actions a:first-child{background:var(--brand-600);border-color:transparent;color:#fff}
   .tableau-mini{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
-  .tableau-mini a{display:block;border:1px solid var(--line);border-radius:12px;background:var(--inset);padding:8px;text-decoration:none;color:var(--soft);font-size:12.5px;font-weight:850}
+  .tableau-mini a{display:block;border:1px solid var(--line);border-radius:12px;background:var(--inset);padding:8px;text-decoration:none;color:var(--soft);font-size:12.5px;font-weight:700}
   .tableau-mini img{width:100%;aspect-ratio:16/10;object-fit:cover;border:1px solid var(--line);border-radius:8px;background:var(--panel);margin-bottom:7px}
   .about-text{color:var(--soft);font-size:15.5px;max-width:76ch}
   .contact{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-  .contact a{color:var(--brand-text);font-weight:800;text-decoration:none}
+  .contact a{color:var(--brand-text);font-weight:700;text-decoration:none}
   footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:13px}
-  .wordmark-line{display:inline-flex;align-items:center;gap:10px;font-weight:850;color:var(--ink)}
+  .wordmark-line{display:inline-flex;align-items:center;gap:10px;font-weight:700;color:var(--ink)}
   .wordmark-line::before{content:"";width:24px;height:24px;border-radius:8px;background:var(--brand-600)}
-  @keyframes gridDrift{from{background-position:0 0,0 0}to{background-position:68px 34px,68px 34px}}
-  @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}.motif::before{animation:none}.btn:hover,.product:hover,.product:focus-within{transform:none}}
-  @media (min-width:1440px){.wrap{width:min(1240px,calc(100% - 64px))}.motif{width:620px;height:390px}.gallery{gap:22px}}
-  @media (max-width:980px){.hero-grid,.split,.spotlight{grid-template-columns:1fr}.motif{width:70vw;opacity:.36}.skill-grid,.audit-list{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}.product,.product:nth-last-child(1):nth-child(odd){grid-column:auto}.cap-grid{grid-template-columns:minmax(160px,1fr) repeat(7,54px);overflow-x:auto}.proof-card{max-width:620px}}
-  @media (max-width:680px){.wrap{width:min(100% - 32px,1120px)}nav a{display:none}.nav{height:56px}.wordmark{font-size:15px}.hero{padding:26px 0 12px}.hero-grid{gap:18px}.motif{display:none}.portfolio-kicker{font-size:11px;margin-bottom:12px}h1{font-size:38px}.lede{font-size:15.5px;margin-top:13px}.role-line,.impact-line{font-size:12.5px}.cta{margin-top:16px}.proof-card{padding:14px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.stat{min-height:72px;padding:11px}.stat b{font-size:27px}.stat span{font-size:12px}.hero-composition-grid{grid-template-columns:1fr}.hero-composition-side{grid-template-columns:repeat(3,1fr)}.preview-mosaic{display:flex;gap:6px;overflow-x:auto;padding-bottom:5px}.preview-mosaic img{flex:0 0 72px;height:98px;aspect-ratio:auto;border-radius:8px}.preview-mosaic img:nth-child(even){transform:none}section{padding:28px 0}.skill-grid,.audit-list{grid-template-columns:1fr}.skill-card{min-height:0}.skill-card img{height:92px}.gallery{grid-template-columns:1fr}.section-head{display:block}.section-head .sub{margin-top:8px}.product{padding:12px}.split{gap:14px}.panel{padding:18px}.mini-grid,.tableau-mini{grid-template-columns:1fr}.cap-grid{grid-template-columns:150px repeat(7,50px)}}
+  @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}.btn:hover,.product:hover,.product:focus-within{transform:none}}
+  @media (min-width:1440px){.wrap{width:min(1240px,calc(100% - 64px))}.gallery{gap:22px}}
+  @media (max-width:980px){.hero-grid,.split,.spotlight{grid-template-columns:1fr}.skill-grid{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}.product,.product:nth-last-child(1):nth-child(odd){grid-column:auto}.cap-grid{grid-template-columns:minmax(160px,1fr) repeat(7,54px);overflow-x:auto}.proof-card{max-width:620px}}
+  @media (max-width:680px){.wrap{width:min(100% - 32px,1120px)}nav a{display:none}.nav{height:56px}.wordmark{font-size:15px}.hero{padding:26px 0 12px}.hero-grid{gap:18px}h1{font-size:34px}.lede{font-size:15.5px;margin-top:13px}.cta{margin-top:16px}.proof-card{padding:14px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.stat{min-height:72px;padding:11px}.stat b{font-size:27px}.stat span{font-size:12px}.hero-composition-grid{grid-template-columns:1fr}.hero-composition-side{grid-template-columns:repeat(3,1fr)}section{padding:28px 0}.skill-grid{grid-template-columns:1fr}.skill-card{min-height:0}.skill-card img{height:92px}.gallery{grid-template-columns:1fr}.section-head{display:block}.section-head .sub{margin-top:8px}.product{padding:12px}.split{gap:14px}.panel{padding:18px}.mini-grid,.tableau-mini{grid-template-columns:1fr}.cap-grid{grid-template-columns:150px repeat(7,50px)}}
 </style>
 </head>
 <body>
@@ -194,7 +170,7 @@
     <nav>
       <a href="#skills">Skills</a>
       <a href="#products">Products</a>
-      <a href="tableau.html">Tableau</a>
+      <a href="/tableau">Tableau</a>
       <a href="#capabilities">Capabilities</a>
       <a href="#ethics">Data &amp; ethics</a>
       <a href="#about">About</a>
@@ -207,24 +183,15 @@
 </header>
 <main id="main">
   <section class="hero" aria-labelledby="hero-title">
-    <div class="motif" aria-hidden="true"></div>
     <div class="wrap hero-grid">
       <div>
-        <p class="portfolio-kicker">Professional Portfolio</p>
-        <p class="eyebrow">Public data products · Decision systems · Executive dashboards</p>
-        <h1 id="hero-title">Jean-Luc Saint-Fleur builds decision products.</h1>
-        <p class="lede">Economist, data strategist, and AI product builder translating public data into practical tools for housing, healthcare, finance, transportation, sports, and economic-policy decisions.</p>
-        <div class="role-line" aria-label="Professional focus">
-          <span>Economist</span><span>Data Strategist</span><span>AI Product Builder</span>
-        </div>
-        <div class="impact-line" aria-label="Portfolio strengths">
-          <span>Executive-ready narratives</span>
-          <span>Traceable methods</span>
-          <span>Honest uncertainty</span>
-        </div>
+        <p class="eyebrow">Economist · Data &amp; Analytics · Product Builder</p>
+        <h1 id="hero-title">Public data, turned into working decision products.</h1>
+        <p class="lede">I'm Jean-Luc Saint-Fleur. I build production tools that translate public data into decisions across housing, healthcare, finance, transportation, and economic policy — with traceable methods and honest uncertainty.</p>
         <div class="cta">
-          <a class="btn btn-primary" href="#products">Explore portfolio</a>
-          <a class="btn btn-secondary" href="https://github.com/jsaintfleur" target="_blank" rel="noreferrer">View GitHub</a>
+          <a class="btn btn-primary" href="#products">Explore the work</a>
+          <a class="btn btn-secondary" href="/tableau">Tableau gallery</a>
+          <a class="btn btn-secondary" href="https://github.com/jsaintfleur" target="_blank" rel="noreferrer">GitHub</a>
         </div>
       </div>
       <div class="proof-card" aria-label="Portfolio proof points">
@@ -234,22 +201,21 @@
             <img class="hero-composition-main" src="assets/thumbs/econos.webp" width="800" height="500" loading="eager" alt="EconOS economic intelligence platform showing current conditions and household impact" />
             <div class="hero-composition-side">
               <img src="assets/thumbs/compet2026.webp" width="800" height="500" loading="eager" alt="Compet 2026 World Cup tournament intelligence interface" />
-              <img src="assets/tableau/superstore-profit.webp" width="640" height="410" loading="eager" alt="Tableau Superstore profit dashboard preview" />
+              <img src="assets/tableau/superstore-profit.webp?v=2" width="1024" height="640" loading="eager" alt="Tableau Superstore profit dashboard preview" />
               <img src="assets/thumbs/sheltershield.webp" width="800" height="500" loading="lazy" alt="ShelterShield geospatial displacement-risk dashboard" />
             </div>
           </div>
           <figcaption>EconOS anchors the portfolio; Compet 2026, Tableau, and ShelterShield show product design, BI, and geospatial analytics.</figcaption>
         </figure>
         <div class="stats" aria-label="Portfolio summary">
-          <div class="stat"><b data-count="7">7</b><span>featured products</span></div>
-          <div class="stat"><b data-count="12" data-suffix="+">12+</b><span>public datasets</span></div>
-          <div class="stat"><b data-count="3">3</b><span>geospatial products</span></div>
-          <div class="stat"><b data-count="1">1</b><span>validated ML model</span></div>
+          <div class="stat"><b>7</b><span>live products, all deployed</span></div>
+          <div class="stat"><b>23</b><span>Tableau Public vizzes</span></div>
+          <div class="stat"><b>12+</b><span>public data sources</span></div>
+          <div class="stat"><b>3</b><span>geospatial decision tools</span></div>
         </div>
         <div class="proof-list">
           <span>EconOS anchors the portfolio with economics, forecasts, and policy scenarios.</span>
           <span>Each product connects analysis to a real decision workflow.</span>
-          <span>Older repos are classified as supporting evidence, not over-promoted.</span>
         </div>
       </div>
     </div>
@@ -391,14 +357,6 @@
           <div class="badges"><span class="badge">Validated ML</span><span class="badge">Segmentation</span><span class="badge">Model card</span></div>
           <div class="links"><a class="live" href="https://jls-marketplace-compass.vercel.app" target="_blank" rel="noreferrer">View live</a><a href="https://github.com/jsaintfleur/jls-marketplace-compass" target="_blank" rel="noreferrer">GitHub</a></div>
         </article>
-        <article class="product" tabindex="0" aria-labelledby="econos-title" style="--accent:var(--brand-600)">
-          <div class="thumb"><img src="assets/thumbs/econos.webp" srcset="assets/thumbs/econos.webp 800w, assets/thumbs/econos@2x.webp 1600w" width="800" height="500" loading="lazy" alt="EconOS live app preview showing economic indicators, household impact, and policy scenario tools" /></div>
-          <div class="accent"></div><span class="sector">Economics · Public Policy</span>
-          <h3 id="econos-title">EconOS</h3><p class="tag">From macroeconomic forces to household outcomes.</p>
-          <p class="outcome">Connects inflation, labor, housing, and rates to household impact, forecasts, and policy scenarios.</p>
-          <div class="badges"><span class="badge">Economic indicators</span><span class="badge">Forecasting</span><span class="badge">Scenario simulator</span></div>
-          <div class="links"><a class="live" href="https://econos-sooty.vercel.app" target="_blank" rel="noreferrer">View live</a></div>
-        </article>
       </div>
     </div>
   </section>
@@ -406,21 +364,21 @@
   <section id="tableau" aria-labelledby="tableau-title">
     <div class="wrap split">
       <div class="panel">
-        <p class="eyebrow">Tableau Analytics</p>
-        <h2 id="tableau-title">Tableau Analytics Collection</h2>
-        <p class="sub">The Tableau Public profile lists 23 vizzes. I feature the public dashboards that loaded reliably in audit and route visitors to the full Tableau profile for the complete collection.</p>
+        <p class="eyebrow">Tableau</p>
+        <h2 id="tableau-title">Four dashboards, embedded and interactive.</h2>
+        <p class="sub">A curated selection from 23 published vizzes — civic analytics, community development, transportation safety, and business intelligence — each embedded interactively on the Tableau page with the full collection linked on Tableau Public.</p>
         <div class="tableau-actions">
-          <a href="tableau.html">Open Tableau Analytics page</a>
-          <a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/vizzes" target="_blank" rel="noreferrer">Full Tableau profile</a>
+          <a href="/tableau">Explore the Tableau gallery</a>
+          <a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/vizzes" target="_blank" rel="noreferrer">Tableau Public profile</a>
         </div>
       </div>
       <div class="panel">
         <h3>Featured Tableau dashboards</h3>
         <div class="tableau-mini">
-          <a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/HeatmapforTicketIssuance/Violations" target="_blank" rel="noreferrer"><img src="assets/tableau/ticket-heatmap.webp" width="640" height="410" loading="eager" alt="Tableau preview of traffic ticket issuance heat map" />Traffic ticket heat map</a>
-          <a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/NYSNonprofitDatabase/Dashboard3" target="_blank" rel="noreferrer"><img src="assets/tableau/nys-nonprofit-db.webp" width="640" height="410" loading="eager" alt="Tableau preview of NYS nonprofit database dashboard" />NYS nonprofit database</a>
-          <a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/NYCCollisions-InDepthAnalysis/InsightsintoNYCCollisionsContributingFactorsCollisionTrendsbyBoroughandZipCodeMapping" target="_blank" rel="noreferrer"><img src="assets/tableau/collisions-depth.webp" width="640" height="410" loading="eager" alt="Tableau preview of NYC collisions in-depth dashboard" />NYC collisions analysis</a>
-          <a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/SuperstoreProfitDashboard_16866700428150/ProfitDashboard" target="_blank" rel="noreferrer"><img src="assets/tableau/superstore-profit.webp" width="640" height="410" loading="eager" alt="Tableau preview of Superstore profit dashboard" />Superstore profit dashboard</a>
+          <a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/HeatmapforTicketIssuance/Violations" target="_blank" rel="noreferrer"><img src="assets/tableau/ticket-heatmap.webp?v=2" width="1024" height="640" loading="eager" alt="Tableau preview of traffic ticket issuance heat map" />Traffic ticket heat map</a>
+          <a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/NYSNonprofitDatabase/Dashboard3" target="_blank" rel="noreferrer"><img src="assets/tableau/nys-nonprofit-db.webp?v=2" width="1024" height="640" loading="eager" alt="Tableau preview of NYS nonprofit database dashboard" />NYS nonprofit database</a>
+          <a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/NYCCollisions-InDepthAnalysis/InsightsintoNYCCollisionsContributingFactorsCollisionTrendsbyBoroughandZipCodeMapping" target="_blank" rel="noreferrer"><img src="assets/tableau/collisions-depth.webp?v=2" width="1024" height="640" loading="eager" alt="Tableau preview of NYC collisions in-depth dashboard" />NYC collisions analysis</a>
+          <a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/SuperstoreProfitDashboard_16866700428150/ProfitDashboard" target="_blank" rel="noreferrer"><img src="assets/tableau/superstore-profit.webp?v=2" width="1024" height="640" loading="eager" alt="Tableau preview of Superstore profit dashboard" />Superstore profit dashboard</a>
         </div>
       </div>
     </div>
@@ -442,7 +400,8 @@
           <div class="cap-row">Prioritization</div><div class="cap-cell no">no</div><div class="cap-cell yes">yes</div><div class="cap-cell no">no</div><div class="cap-cell no">no</div><div class="cap-cell yes">yes</div><div class="cap-cell no">no</div><div class="cap-cell no">no</div>
           <div class="cap-row">Sourced methods</div><div class="cap-cell yes">yes</div><div class="cap-cell yes">yes</div><div class="cap-cell yes">yes</div><div class="cap-cell yes">yes</div><div class="cap-cell yes">yes</div><div class="cap-cell yes">yes</div><div class="cap-cell yes">yes</div>
         </div>
-        <table id="cap-alt" class="visually-hidden">
+        <div class="visually-hidden" id="cap-alt-wrap">
+        <table id="cap-alt">
           <caption>Capability matrix for the seven featured portfolio products</caption>
           <thead><tr><th>Capability</th><th>Compet</th><th>Shelter</th><th>Care</th><th>Pulse</th><th>Transit</th><th>Market</th><th>Econ</th></tr></thead>
           <tbody>
@@ -456,17 +415,7 @@
             <tr><td>Sourced methods</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
           </tbody>
         </table>
-      </div>
-    </div>
-  </section>
-
-  <section id="portfolio-strategy" aria-labelledby="strategy-title">
-    <div class="wrap">
-      <div class="section-head"><h2 id="strategy-title">Portfolio audit decisions</h2><p class="sub">Current GitHub inventory was reviewed for hiring value, product completeness, analytics depth, and overlap.</p></div>
-      <div class="audit-list">
-        <div class="panel"><h3>Featured now</h3><p>EconOS, Compet 2026, ShelterShield, CareShed, PulseCredit, TransitShield, Marketplace Compass, and this portfolio hub have the strongest mix of live deployment, product polish, and business relevance.</p></div>
-        <div class="panel"><h3>Supporting evidence</h3><p>FX Rate Project, NYC Traffic Tickets, Tracking NYC Homelessness, SONYMA loan analysis, Konektravay, and selected neural-network notebooks support forecasting, civic analytics, AI, and community-development range.</p></div>
-        <div class="panel"><h3>Archive or improve later</h3><p>Bootcamp challenge repos and early setup repositories should stay off the homepage unless rewritten as polished case studies with screenshots, documentation, and clear business framing.</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -535,25 +484,7 @@
         if(label) label.textContent=isDark?"Light mode":"Dark mode";
       }
     }
-    function countStats(){
-      document.querySelectorAll("[data-count]").forEach(function(el){
-        var target=Number(el.dataset.count||"0");
-        var suffix=el.dataset.suffix||"";
-        el.textContent=target+suffix;
-        if(reduceMotion){return}
-        var start=performance.now();
-        var duration=520;
-        function tick(now){
-          var t=Math.min(1,(now-start)/duration);
-          var eased=1-Math.pow(1-t,3);
-          el.textContent=Math.round(target*eased)+suffix;
-          if(t<1) requestAnimationFrame(tick);
-        }
-        window.setTimeout(function(){requestAnimationFrame(tick)},160);
-      });
-    }
     applyTheme(isDark);
-    countStats();
     if(button){
       button.addEventListener("click",function(){
         applyTheme(!isDark);

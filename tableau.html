@@ -1,91 +1,298 @@
 <!doctype html>
-<html lang="en" data-app-accent="haiti">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tableau Analytics - Jean-Luc Saint-Fleur Portfolio</title>
-<meta name="description" content="Jean-Luc Saint-Fleur's Tableau Analytics collection: public dashboards across community development, transportation, business intelligence, sports analytics, and civic data." />
+<title>Tableau Gallery - Jean-Luc Saint-Fleur</title>
+<meta name="description" content="Four featured interactive Tableau dashboards spanning civic analytics, community development, transportation safety, and business intelligence, with the full collection on Tableau Public." />
 <meta name="theme-color" content="#142d8c" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tableau Gallery - Jean-Luc Saint-Fleur" />
+<meta property="og:description" content="Featured interactive Tableau dashboards: civic analytics, community development, transportation safety, and business intelligence." />
+<meta property="og:image" content="https://jls-portfolio-zeta.vercel.app/assets/social-preview.png" />
+<meta property="og:url" content="https://jls-portfolio-zeta.vercel.app/tableau" />
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
 <style>
-  :root{color-scheme:light;--ink:#0f172a;--soft:#334155;--muted:#64748b;--canvas:#fbfaf8;--panel:#fff;--inset:#f8fafc;--line:#e2e8f0;--brand:#142d8c;--brand-soft:#eef2fc;--font:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;--shadow:0 12px 34px rgba(15,23,42,.08)}
-  @media (prefers-color-scheme:dark){:root{color-scheme:dark;--ink:#f8fafc;--soft:#cbd5e1;--muted:#94a3b8;--canvas:#070b13;--panel:#111827;--inset:#0b1220;--line:#334155;--brand-soft:#0a1642;--shadow:0 14px 34px rgba(0,0,0,.26)}}
+  :root{
+    color-scheme:light;
+    --ink:#0f172a;--soft:#334155;--muted:#64748b;
+    --canvas:#fbfaf8;--panel:#fff;--inset:#f8fafc;--line:#e2e8f0;
+    --brand:#142d8c;--brand-500:#2a49b8;--brand-text:#102270;--brand-soft:#eef2fc;
+    --font:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --shadow:0 8px 24px rgba(15,23,42,.08);
+  }
+  :root.dark{color-scheme:dark;--ink:#f8fafc;--soft:#cbd5e1;--muted:#94a3b8;--canvas:#070b13;--panel:#111827;--inset:#0b1220;--line:#334155;--brand-text:#7f9ae0;--brand-soft:#0a1642;--shadow:0 10px 26px rgba(0,0,0,.28)}
+  @media (prefers-color-scheme:dark){:root:not(.light){color-scheme:dark;--ink:#f8fafc;--soft:#cbd5e1;--muted:#94a3b8;--canvas:#070b13;--panel:#111827;--inset:#0b1220;--line:#334155;--brand-text:#7f9ae0;--brand-soft:#0a1642;--shadow:0 10px 26px rgba(0,0,0,.28)}}
   *{box-sizing:border-box}
-  body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--font);line-height:1.55}
+  body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--font);line-height:1.55;-webkit-font-smoothing:antialiased}
   a{color:inherit}
-  .wrap{width:min(1120px,calc(100% - 40px));margin:0 auto}
-  header{border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--panel) 92%,transparent);backdrop-filter:blur(12px);position:sticky;top:0;z-index:10}
+  img{display:block;max-width:100%}
+  .skip{position:absolute;left:18px;top:-80px;z-index:30;background:var(--brand);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+  .skip:focus{top:14px}
+  .wrap{width:min(1160px,calc(100% - 40px));margin:0 auto}
+  header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--panel) 92%,transparent);backdrop-filter:blur(12px)}
   .nav{height:60px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-  .brand{font-weight:900;text-decoration:none;letter-spacing:-.02em}
-  .back{color:var(--brand);font-weight:850;text-decoration:none}
-  main{padding:56px 0}
-  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:900;color:var(--brand)}
-  h1{font-size:clamp(38px,6vw,70px);line-height:.95;letter-spacing:-.055em;margin:12px 0}
-  h2{font-size:28px;letter-spacing:-.035em;margin:0 0 14px}
-  .lede{font-size:18px;color:var(--soft);max-width:76ch}
-  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:start}
-  .panel{border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:22px;box-shadow:var(--shadow)}
-  .panel p,.panel li{color:var(--soft)}
-  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-  .stat{border:1px solid var(--line);border-radius:14px;background:var(--inset);padding:14px}
-  .stat b{display:block;font-size:28px;letter-spacing:-.04em}
-  .stat span{display:block;color:var(--muted);font-size:12.5px}
-  .btn{display:inline-flex;margin-top:12px;border-radius:11px;background:var(--brand);color:#fff;text-decoration:none;font-weight:900;padding:10px 14px}
-  .group{margin-top:34px}
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  .viz{border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:218px}
-  .viz img{width:100%;aspect-ratio:16/10;object-fit:cover;border:1px solid var(--line);border-radius:12px;background:var(--inset);margin-bottom:12px}
-  .viz .topic{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--brand);font-weight:900}
-  .viz h3{font-size:19px;line-height:1.1;letter-spacing:-.025em;margin:8px 0}
-  .viz p{color:var(--soft);font-size:13.5px;margin:0 0 12px}
-  .views{display:inline-flex;align-self:flex-start;border:1px solid var(--line);border-radius:999px;background:var(--inset);color:var(--muted);font-size:11.5px;font-weight:900;padding:4px 8px;margin-bottom:8px}
-  .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
-  .tags span{border:1px solid var(--line);background:var(--inset);border-radius:999px;color:var(--soft);font-size:11.5px;font-weight:800;padding:4px 8px}
-  .viz a{display:inline-flex;margin-top:14px;color:var(--brand);font-size:13px;font-weight:900;text-decoration:none}
-  @media (max-width:900px){.hero,.grid{grid-template-columns:1fr 1fr}}
-  @media (max-width:640px){.wrap{width:min(100% - 32px,1120px)}main{padding:34px 0}.hero,.grid,.stats{grid-template-columns:1fr}.nav{height:auto;padding:14px 0;align-items:flex-start}.back{font-size:13px}}
+  .brand{font-weight:700;text-decoration:none;letter-spacing:-.02em}
+  .back{color:var(--brand-text);font-weight:700;text-decoration:none;font-size:14px}
+  main{padding:52px 0 64px}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--brand-text)}
+  h1{font-size:clamp(32px,4.4vw,48px);line-height:1.06;letter-spacing:-.03em;margin:10px 0 0;max-width:24ch}
+  .lede{font-size:17px;color:var(--soft);max-width:70ch;margin:14px 0 0}
+  .lede a{color:var(--brand-text);font-weight:650}
+  .head-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:20px}
+  .btn{min-height:42px;display:inline-flex;align-items:center;justify-content:center;border-radius:11px;padding:10px 16px;border:1px solid transparent;text-decoration:none;font-size:14px;font-weight:700}
+  .btn-primary{background:var(--brand);color:#fff}
+  .btn-secondary{background:var(--panel);border-color:var(--line);color:var(--soft)}
+  .section-note{margin:44px 0 18px}
+  h2{font-size:clamp(24px,3vw,32px);letter-spacing:-.025em;margin:0}
+  .sub{margin:8px 0 0;color:var(--muted);font-size:15px;max-width:76ch}
+  /* Featured gallery: two dashboards per row on desktop, one on tablet/mobile.
+     Dashboards get the visual emphasis — large previews, generous spacing. */
+  .featured{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:22px}
+  .viz-card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow);overflow:hidden}
+  .viz-media{position:relative;border-bottom:1px solid var(--line);background:var(--inset)}
+  .viz-media img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+  .viz-embed{display:none;width:100%;background:var(--inset)}
+  .viz-embed.active{display:block}
+  .viz-embed tableau-viz{width:100%;min-height:640px}
+  .viz-loading{position:absolute;inset:0;display:none;place-items:center;background:color-mix(in srgb,var(--panel) 62%,transparent);backdrop-filter:blur(2px);color:var(--soft);font-weight:650;font-size:14px}
+  .viz-loading.active{display:grid}
+  .viz-loading span{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:9px 16px}
+  .viz-loading span::before{content:"";width:14px;height:14px;border-radius:999px;border:2px solid var(--line);border-top-color:var(--brand-500);animation:spin .8s linear infinite}
+  @keyframes spin{to{transform:rotate(1turn)}}
+  .viz-body{display:flex;flex-direction:column;flex:1;padding:20px 22px 22px}
+  .viz-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .topic{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-text);font-weight:700}
+  .views{color:var(--muted);font-size:12.5px}
+  .viz-body h3{font-size:22px;line-height:1.15;letter-spacing:-.02em;margin:10px 0 0}
+  .viz-body .desc{color:var(--soft);font-size:14.5px;margin:8px 0 0}
+  .why{margin:10px 0 0;color:var(--muted);font-size:13px}
+  .why b{color:var(--soft);font-weight:650}
+  .tags{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 0}
+  .tags span{border:1px solid var(--line);background:var(--inset);border-radius:999px;color:var(--soft);font-size:11.5px;font-weight:650;padding:4px 9px}
+  .viz-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+  .viz-actions button,.viz-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:40px;border-radius:10px;padding:9px 14px;font:700 13.5px/1 var(--font);text-decoration:none;cursor:pointer}
+  .load-viz{background:var(--brand);color:#fff;border:1px solid transparent}
+  .load-viz[aria-expanded=true]{background:var(--panel);color:var(--soft);border-color:var(--line)}
+  .open-tableau{background:var(--panel);color:var(--soft);border:1px solid var(--line)}
+  /* Archive: compact reference list, deliberately quieter than the featured grid. */
+  .archive{margin-top:18px;border:1px solid var(--line);border-radius:16px;background:var(--panel);box-shadow:var(--shadow)}
+  .archive ul{list-style:none;margin:0;padding:8px 0}
+  .archive li{border-top:1px solid var(--line)}
+  .archive li:first-child{border-top:0}
+  .archive a{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:13px 20px;text-decoration:none}
+  .archive a:hover{background:var(--inset)}
+  .archive .name{font-weight:650;font-size:14.5px}
+  .archive .kind{color:var(--muted);font-size:12.5px;white-space:nowrap}
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
+  :focus-visible{outline:3px solid color-mix(in srgb,var(--brand) 72%,white);outline-offset:3px;border-radius:8px}
+  @media (prefers-reduced-motion:reduce){.viz-loading span::before{animation:none}}
+  @media (max-width:1023px){.featured{grid-template-columns:1fr}}
+  @media (max-width:680px){
+    .wrap{width:min(100% - 32px,1160px)}
+    main{padding:34px 0 44px}
+    .viz-body{padding:16px}
+    .viz-embed tableau-viz{min-height:520px}
+    .archive a{padding:12px 16px}
+  }
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="/">Jean-Luc Saint-Fleur Portfolio</a><a class="back" href="/">Back to portfolio</a></div></header>
-<main>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap nav" role="navigation" aria-label="Primary">
+    <a class="brand" href="/">Jean-Luc Saint-Fleur</a>
+    <a class="back" href="/">Back to portfolio</a>
+  </div>
+</header>
+<main id="main">
   <div class="wrap">
-    <section class="hero">
-      <div>
-        <p class="eyebrow">Tableau Analytics</p>
-        <h1>Interactive dashboards across civic, business, sports, and nonprofit data.</h1>
-        <p class="lede">The Tableau Public profile at jeanlucsaintfleur lists 23 vizzes. This page features the dashboards that loaded reliably during the audit and sends visitors to Tableau Public for the full interactive collection.</p>
-        <a class="btn" href="https://public.tableau.com/app/profile/jeanlucsaintfleur/vizzes" target="_blank" rel="noreferrer">Open full Tableau profile</a>
-      </div>
-      <div class="panel">
-        <h2>Collection Summary</h2>
-        <div class="stats">
-          <div class="stat"><b>23</b><span>vizzes listed on profile</span></div>
-          <div class="stat"><b>12</b><span>featured launch cards</span></div>
-          <div class="stat"><b>5</b><span>portfolio themes</span></div>
-          <div class="stat"><b>0</b><span>fabricated embeds</span></div>
-        </div>
+    <section aria-labelledby="tableau-title">
+      <p class="eyebrow">Tableau Gallery</p>
+      <h1 id="tableau-title">Four dashboards, chosen for the questions they answer.</h1>
+      <p class="lede">My <a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/vizzes" target="_blank" rel="noreferrer">Tableau Public profile</a> holds 23 published vizzes. These four earned the front page — for analytical depth, visual quality, and relevance to the work I do across civic data, community development, transportation, and business intelligence. Each one loads fully interactive, right here.</p>
+      <div class="head-actions">
+        <a class="btn btn-primary" href="https://public.tableau.com/app/profile/jeanlucsaintfleur/vizzes" target="_blank" rel="noreferrer">Open the full profile on Tableau Public</a>
+        <a class="btn btn-secondary" href="/#products">See the product portfolio</a>
       </div>
     </section>
 
-    <section class="group" aria-labelledby="featured-tableau">
-      <h2 id="featured-tableau">Featured Tableau Launch Cards</h2>
-      <div class="grid">
-        <article class="viz"><img src="assets/tableau/ticket-heatmap.webp" width="640" height="410" loading="lazy" alt="Tableau dashboard preview for ticket issuance heat map" /><span class="topic">Civic Analytics</span><h3>Heat map for Ticket Issuance</h3><span class="views">260 views</span><p>Explores ticket patterns using a visual heat-map structure.</p><div class="tags"><span>Geospatial</span><span>Traffic</span><span>Patterns</span></div><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/HeatmapforTicketIssuance/Violations" target="_blank" rel="noreferrer">Launch dashboard</a></article>
-        <article class="viz"><img src="assets/tableau/npo-zip-map.webp" width="640" height="410" loading="lazy" alt="Tableau dashboard preview for NY nonprofit ZIP-code map" /><span class="topic">Community Development</span><h3>Map for NY NPOs - Zip Code Level</h3><span class="views">15 views</span><p>Maps nonprofit coverage and geography at the ZIP-code level.</p><div class="tags"><span>Nonprofits</span><span>Map</span><span>NY</span></div><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/MapforNYNPOs-ZipCodeLevel/Dashboard1" target="_blank" rel="noreferrer">Launch dashboard</a></article>
-        <article class="viz"><img src="assets/tableau/npo-county-survey.webp" width="640" height="410" loading="lazy" alt="Tableau dashboard preview for county nonprofit survey coverage" /><span class="topic">Community Development</span><h3>nys_survey_npos</h3><span class="views">6 views</span><p>Shows county coverage from New York nonprofit survey data.</p><div class="tags"><span>Survey</span><span>County</span><span>Coverage</span></div><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/nys_survey_npos/MAPCountyCoverage" target="_blank" rel="noreferrer">Launch dashboard</a></article>
-        <article class="viz"><img src="assets/tableau/event-regs.webp" width="640" height="410" loading="lazy" alt="Tableau dashboard preview for event registrations" /><span class="topic">Operations</span><h3>Event Regs</h3><span class="views">57 views</span><p>Tracks event registrations and operational participation patterns.</p><div class="tags"><span>Events</span><span>Operations</span><span>BI</span></div><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/EventRegs/Dashboard1" target="_blank" rel="noreferrer">Launch dashboard</a></article>
-        <article class="viz"><img src="assets/tableau/project-1.webp" width="640" height="410" loading="lazy" alt="Tableau exploratory workbook preview" /><span class="topic">Exploratory Analysis</span><h3>project_1</h3><span class="views">11 views</span><p>Exploratory Tableau workbook retained as supporting visualization evidence.</p><div class="tags"><span>Exploration</span><span>Visual analysis</span></div><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/project_1_17551325624360/Sheet8" target="_blank" rel="noreferrer">Launch dashboard</a></article>
-        <article class="viz"><img src="assets/tableau/nys-nonprofit-db.webp" width="640" height="410" loading="lazy" alt="Tableau dashboard preview for NYS nonprofit database" /><span class="topic">Community Development</span><h3>NYS Nonprofit Database</h3><span class="views">134 views</span><p>Dashboard view into nonprofit database records and organizational patterns.</p><div class="tags"><span>Database</span><span>Nonprofits</span><span>NY</span></div><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/NYSNonprofitDatabase/Dashboard3" target="_blank" rel="noreferrer">Launch dashboard</a></article>
-        <article class="viz"><img src="assets/tableau/community-improvement.webp" width="640" height="410" loading="lazy" alt="Tableau story preview for community improvement project" /><span class="topic">Community Development</span><h3>Community Improvement Project</h3><span class="views">20 views</span><p>Story-based Tableau presentation for a community improvement workflow.</p><div class="tags"><span>Story</span><span>Programs</span><span>Impact</span></div><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/CommunityImprovementProject/Story1" target="_blank" rel="noreferrer">Launch story</a></article>
-        <article class="viz"><img src="assets/tableau/cip-orders.webp" width="640" height="410" loading="lazy" alt="Tableau dashboard preview for CIP orders assigned to users" /><span class="topic">Operations</span><h3>cip</h3><span class="views">42 views</span><p>Operational assignment view for community improvement project workflows.</p><div class="tags"><span>Assignments</span><span>Operations</span></div><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/cip_17087044855180/OrdersAssignedtoEachUser" target="_blank" rel="noreferrer">Launch dashboard</a></article>
-        <article class="viz"><img src="assets/tableau/collisions-yearly.webp" width="640" height="410" loading="lazy" alt="Tableau dashboard preview for NYC collisions yearly incidents" /><span class="topic">Transportation Safety</span><h3>NYC Collisions - Incidents (Yearly)</h3><span class="views">39 views</span><p>Annual collision analysis across fatalities, injuries, borough trends, and factors.</p><div class="tags"><span>NYC</span><span>Safety</span><span>Trends</span></div><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/NYCCollisions-IncidentsYearly/NYCCollisionsUnveiledADetailedDiveintoFatalitiesInjuriesBoroughTrendsandContributingFactors" target="_blank" rel="noreferrer">Launch dashboard</a></article>
-        <article class="viz"><img src="assets/tableau/collisions-depth.webp" width="640" height="410" loading="lazy" alt="Tableau dashboard preview for NYC collisions in-depth analysis" /><span class="topic">Transportation Safety</span><h3>NYC Collisions - In Depth Analysis</h3><span class="views">55 views</span><p>Detailed borough, ZIP-code, factor, and collision trend exploration.</p><div class="tags"><span>Mapping</span><span>Safety</span><span>EDA</span></div><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/NYCCollisions-InDepthAnalysis/InsightsintoNYCCollisionsContributingFactorsCollisionTrendsbyBoroughandZipCodeMapping" target="_blank" rel="noreferrer">Launch dashboard</a></article>
-        <article class="viz"><img src="assets/tableau/uefa-dashboard.webp" width="640" height="410" loading="lazy" alt="Tableau dashboard preview for UEFA Champions League analytics" /><span class="topic">Sports Analytics</span><h3>UEFA Champions League Dashboard</h3><span class="views">38 views</span><p>Sports dashboard showing tournament and team-level football analytics.</p><div class="tags"><span>Sports</span><span>Football</span><span>Dashboard</span></div><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/UEFAChampionsLeagueDashboard_16869617489090/UEFAChampionsLeagueDashboard" target="_blank" rel="noreferrer">Launch dashboard</a></article>
-        <article class="viz"><img src="assets/tableau/superstore-profit.webp" width="640" height="410" loading="lazy" alt="Tableau dashboard preview for Superstore profit dashboard" /><span class="topic">Business Intelligence</span><h3>Superstore Profit Dashboard</h3><span class="views">34 views</span><p>Classic BI dashboard for profit, business performance, and executive reporting.</p><div class="tags"><span>Profit</span><span>BI</span><span>Executive dashboard</span></div><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/SuperstoreProfitDashboard_16866700428150/ProfitDashboard" target="_blank" rel="noreferrer">Launch dashboard</a></article>
+    <section aria-labelledby="featured-title">
+      <div class="section-note">
+        <h2 id="featured-title">Featured dashboards</h2>
+        <p class="sub">Interactive embeds load on demand to keep this page fast. Every dashboard also opens directly on Tableau Public.</p>
+      </div>
+      <div class="featured">
+        <article class="viz-card">
+          <div class="viz-media">
+            <img src="assets/tableau/ticket-heatmap.webp?v=2" width="1024" height="640" loading="lazy" alt="Preview of the ticket issuance heat map dashboard: a color-intensity matrix of violations" />
+            <div class="viz-embed" data-embed
+              data-src="https://public.tableau.com/views/HeatmapforTicketIssuance/Violations"
+              data-title="Heat Map for Ticket Issuance"></div>
+            <div class="viz-loading" aria-hidden="true"><span>Loading interactive dashboard…</span></div>
+          </div>
+          <div class="viz-body">
+            <div class="viz-meta"><span class="topic">Civic Analytics</span><span class="views">260 views on Tableau Public</span></div>
+            <h3>Heat Map for Ticket Issuance</h3>
+            <p class="desc">Where and when tickets are issued, structured as a heat map so enforcement patterns — by location and time — surface at a glance.</p>
+            <p class="why"><b>Why it's featured:</b> the most-viewed dashboard on the profile, and the clearest example of pattern-finding in messy public enforcement data.</p>
+            <div class="tags"><span>Geospatial</span><span>Public data</span><span>Pattern analysis</span></div>
+            <div class="viz-actions">
+              <button class="load-viz" type="button" aria-expanded="false">View interactive dashboard</button>
+              <a class="open-tableau" href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/HeatmapforTicketIssuance/Violations" target="_blank" rel="noreferrer">Open on Tableau Public</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-media">
+            <img src="assets/tableau/nys-nonprofit-db.webp?v=2" width="1024" height="640" loading="lazy" alt="Preview of the NYS nonprofit database dashboard with organizational records and distributions" />
+            <div class="viz-embed" data-embed
+              data-src="https://public.tableau.com/views/NYSNonprofitDatabase/Dashboard3"
+              data-title="NYS Nonprofit Database"></div>
+            <div class="viz-loading" aria-hidden="true"><span>Loading interactive dashboard…</span></div>
+          </div>
+          <div class="viz-body">
+            <div class="viz-meta"><span class="topic">Community Development</span><span class="views">134 views on Tableau Public</span></div>
+            <h3>NYS Nonprofit Database</h3>
+            <p class="desc">A dashboard view into New York State's nonprofit sector — organizational records, geography, and structural patterns across the database.</p>
+            <p class="why"><b>Why it's featured:</b> connects directly to my community-development practice, turning a raw state database into a navigable sector view.</p>
+            <div class="tags"><span>Nonprofits</span><span>Database analysis</span><span>New York</span></div>
+            <div class="viz-actions">
+              <button class="load-viz" type="button" aria-expanded="false">View interactive dashboard</button>
+              <a class="open-tableau" href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/NYSNonprofitDatabase/Dashboard3" target="_blank" rel="noreferrer">Open on Tableau Public</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-media">
+            <img src="assets/tableau/collisions-depth.webp?v=2" width="1024" height="640" loading="lazy" alt="Preview of the NYC collisions in-depth dashboard with borough trends, contributing factors, and maps" />
+            <div class="viz-embed" data-embed
+              data-src="https://public.tableau.com/views/NYCCollisions-InDepthAnalysis/InsightsintoNYCCollisionsContributingFactorsCollisionTrendsbyBoroughandZipCodeMapping"
+              data-title="NYC Collisions - In Depth Analysis"></div>
+            <div class="viz-loading" aria-hidden="true"><span>Loading interactive dashboard…</span></div>
+          </div>
+          <div class="viz-body">
+            <div class="viz-meta"><span class="topic">Transportation Safety</span><span class="views">55 views on Tableau Public</span></div>
+            <h3>NYC Collisions — In-Depth Analysis</h3>
+            <p class="desc">Collision trends by borough and ZIP code, contributing factors, and geographic mapping — a multi-angle safety analysis of NYC open data.</p>
+            <p class="why"><b>Why it's featured:</b> the deepest analytical narrative in the collection — one dataset examined across time, geography, and cause.</p>
+            <div class="tags"><span>NYC Open Data</span><span>Mapping</span><span>Exploratory analysis</span></div>
+            <div class="viz-actions">
+              <button class="load-viz" type="button" aria-expanded="false">View interactive dashboard</button>
+              <a class="open-tableau" href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/NYCCollisions-InDepthAnalysis/InsightsintoNYCCollisionsContributingFactorsCollisionTrendsbyBoroughandZipCodeMapping" target="_blank" rel="noreferrer">Open on Tableau Public</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-media">
+            <img src="assets/tableau/superstore-profit.webp?v=2" width="1024" height="640" loading="lazy" alt="Preview of the Superstore profit dashboard with KPI tiles and profit breakdowns" />
+            <div class="viz-embed" data-embed
+              data-src="https://public.tableau.com/views/SuperstoreProfitDashboard_16866700428150/ProfitDashboard"
+              data-title="Superstore Profit Dashboard"></div>
+            <div class="viz-loading" aria-hidden="true"><span>Loading interactive dashboard…</span></div>
+          </div>
+          <div class="viz-body">
+            <div class="viz-meta"><span class="topic">Business Intelligence</span><span class="views">34 views on Tableau Public</span></div>
+            <h3>Superstore Profit Dashboard</h3>
+            <p class="desc">An executive profit dashboard: performance by segment, category, and region, built for the questions a business reviewer actually asks.</p>
+            <p class="why"><b>Why it's featured:</b> the classic BI artifact — it shows executive-reporting fundamentals on a dataset every Tableau reviewer knows.</p>
+            <div class="tags"><span>Executive reporting</span><span>KPI design</span><span>Profitability</span></div>
+            <div class="viz-actions">
+              <button class="load-viz" type="button" aria-expanded="false">View interactive dashboard</button>
+              <a class="open-tableau" href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/SuperstoreProfitDashboard_16866700428150/ProfitDashboard" target="_blank" rel="noreferrer">Open on Tableau Public</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="archive-title">
+      <div class="section-note">
+        <h2 id="archive-title">More from the collection</h2>
+        <p class="sub">Additional published dashboards and stories, hosted on Tableau Public. The full profile lists all 23 vizzes.</p>
+      </div>
+      <div class="archive">
+        <ul>
+          <li><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/NYCCollisions-IncidentsYearly/NYCCollisionsUnveiledADetailedDiveintoFatalitiesInjuriesBoroughTrendsandContributingFactors" target="_blank" rel="noreferrer"><span class="name">NYC Collisions — Incidents by Year</span><span class="kind">Transportation safety</span></a></li>
+          <li><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/UEFAChampionsLeagueDashboard_16869617489090/UEFAChampionsLeagueDashboard" target="_blank" rel="noreferrer"><span class="name">UEFA Champions League Dashboard</span><span class="kind">Sports analytics</span></a></li>
+          <li><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/EventRegs/Dashboard1" target="_blank" rel="noreferrer"><span class="name">Event Registrations</span><span class="kind">Operations</span></a></li>
+          <li><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/MapforNYNPOs-ZipCodeLevel/Dashboard1" target="_blank" rel="noreferrer"><span class="name">NY Nonprofits — ZIP-Code Map</span><span class="kind">Community development</span></a></li>
+          <li><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/nys_survey_npos/MAPCountyCoverage" target="_blank" rel="noreferrer"><span class="name">NYS Nonprofit Survey — County Coverage</span><span class="kind">Community development</span></a></li>
+          <li><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/CommunityImprovementProject/Story1" target="_blank" rel="noreferrer"><span class="name">Community Improvement Project</span><span class="kind">Tableau story</span></a></li>
+          <li><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/cip_17087044855180/OrdersAssignedtoEachUser" target="_blank" rel="noreferrer"><span class="name">CIP — Order Assignments</span><span class="kind">Operations</span></a></li>
+          <li><a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/vizzes" target="_blank" rel="noreferrer"><span class="name">All 23 vizzes on Tableau Public</span><span class="kind">Full profile</span></a></li>
+        </ul>
       </div>
     </section>
   </div>
 </main>
+<footer>
+  <div class="wrap">
+    <p>Dashboards are published on Tableau Public and embedded with the Tableau Embedding API. Built on public data — not investment, legal, medical, or policy advice.</p>
+  </div>
+</footer>
+<script>
+  (function(){
+    // Match the portfolio's saved theme preference.
+    var saved=localStorage.getItem("jls-theme");
+    if(saved==="dark") document.documentElement.classList.add("dark");
+    else if(saved==="light") document.documentElement.classList.add("light");
+
+    // Click-to-load Tableau embeds: the Embedding API module and each viz are
+    // fetched only when a visitor asks for them, so initial page weight stays
+    // at the static HTML + preview images.
+    var apiLoaded=false;
+    function loadApi(){
+      if(apiLoaded) return;
+      apiLoaded=true;
+      var s=document.createElement("script");
+      s.type="module";
+      s.src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js";
+      document.head.appendChild(s);
+    }
+    document.querySelectorAll(".load-viz").forEach(function(button){
+      button.addEventListener("click",function(){
+        var card=button.closest(".viz-card");
+        var media=card.querySelector(".viz-media");
+        var embedHost=media.querySelector("[data-embed]");
+        var preview=media.querySelector("img");
+        var loading=media.querySelector(".viz-loading");
+        var expanded=button.getAttribute("aria-expanded")==="true";
+
+        if(expanded){
+          // Collapse back to the lightweight preview.
+          embedHost.classList.remove("active");
+          embedHost.innerHTML="";
+          preview.style.display="";
+          button.setAttribute("aria-expanded","false");
+          button.textContent="View interactive dashboard";
+          return;
+        }
+
+        loadApi();
+        loading.classList.add("active");
+        var viz=document.createElement("tableau-viz");
+        viz.setAttribute("src",embedHost.dataset.src);
+        viz.setAttribute("toolbar","bottom");
+        viz.setAttribute("hide-tabs","");
+        viz.setAttribute("aria-label",embedHost.dataset.title+" interactive dashboard");
+        viz.addEventListener("firstinteractive",function(){
+          loading.classList.remove("active");
+        });
+        // If the embed fails to become interactive, keep the fallback visible
+        // and stop the loading indicator rather than spinning forever.
+        window.setTimeout(function(){loading.classList.remove("active")},15000);
+        embedHost.appendChild(viz);
+        embedHost.classList.add("active");
+        preview.style.display="none";
+        button.setAttribute("aria-expanded","true");
+        button.textContent="Hide interactive dashboard";
+      });
+    });
+  })();
+</script>
 </body>
 </html>

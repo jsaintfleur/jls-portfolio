@@ -142,3 +142,69 @@ Image licensing review:
 Alt-text inventory:
 - Meaningful product, hero, and Tableau preview images include descriptive alt text.
 - Decorative or future imagery should use empty alt text only when it adds no content.
+
+---
+
+# Audit & Tableau Enhancement Sprint (2026-07-18)
+
+## Full-portfolio audit findings
+
+**Working well (preserved):** evidence-first positioning; real product screenshots
+and real Tableau previews (no stock imagery); dark mode with persistence; skip
+link, focus-visible states, reduced-motion support; screen-reader fallback for
+the capability matrix; static single-file delivery (fast by construction);
+EconOS-as-centerpiece strategy.
+
+**Removed as dated/cheesy/promotional:**
+- Animated count-up hero statistics (marketing-flashy; also thin stats like
+  "1 validated ML model" replaced with substantive ones).
+- Animated drifting grid motif in the hero.
+- Pill overload in the hero (kicker pill + eyebrow + role pills + impact pills
+  stacked four-deep before the headline) — consolidated to one eyebrow line and
+  a single lede sentence.
+- Font weights 800-900 throughout, ultra-tight letter-spacing (-.055em), and
+  line-height .93 display styling — normalized to 650-750 weights and readable
+  tracking.
+- Italic marketing taglines on product cards (copy kept, styling normalized).
+- "Portfolio audit decisions" homepage section (internal process content, not
+  recruiter-facing — retained here in the audit doc instead).
+- Duplicate EconOS card (spotlight + gallery card) — spotlight only now.
+- "0 fabricated embeds" stat on the Tableau page.
+
+**Bugs fixed:**
+- Mobile horizontal overflow (579px page width at 375px viewport) caused by the
+  visually-hidden capability-matrix fallback table: tables refuse widths below
+  content minimum, so the 1px clip never applied. Fixed by moving the
+  visually-hidden clip to a wrapper div — semantics preserved.
+
+## Tableau audit and redesign
+
+**Before:** 12 launch cards in a compressed 3-column grid; preview images were
+full Tableau Public page screenshots including site chrome (nav, sign-up
+banners, sidebar); no interactive embeds; weak workbook titles ("project_1",
+"cip", "nys_survey_npos") displayed verbatim on equal footing with strong work.
+
+**After:** dedicated /tableau page (clean URL via vercel.json) with:
+- Four featured dashboards, max two per row on desktop, one per row below
+  1024px, full-width mobile.
+- Clean viz-only preview captures (embed view, no site chrome, 1024×640).
+- Click-to-load interactive embeds via the Tableau Embedding API v3: the API
+  module and viz load only on demand; spinner loading state; collapse restores
+  the lightweight preview; every card keeps a direct Tableau Public fallback
+  link. Page weight before interaction: static HTML + four preview images.
+- Each card: large preview, title, description, category, view count, skills
+  tags, stated selection rationale, and both actions.
+- Remaining dashboards presented as a quiet archive list linking to Tableau
+  Public, with the full 23-viz profile linked.
+
+**Featured four and selection rationale:**
+1. Heat Map for Ticket Issuance — civic analytics/geospatial; highest public
+   engagement (260 views); clearest pattern-finding demonstration.
+2. NYS Nonprofit Database — community development; 134 views; direct alignment
+   with Jean-Luc's LISC community-development practice.
+3. NYC Collisions — In-Depth Analysis — transportation safety; deepest
+   analytical narrative (time × geography × contributing factors).
+4. Superstore Profit Dashboard — business intelligence; the canonical executive
+   BI artifact every Tableau reviewer can benchmark.
+   Balanced mix: civic, community development, transportation, BI. Sports
+   (UEFA) and operations dashboards remain in the archive.
