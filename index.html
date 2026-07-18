@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-app-accent="shelter">
+<html lang="en" data-app-accent="haiti">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,18 +9,22 @@
   :root{
     --ink:#0f172a; --soft:#334155; --muted:#64748b; --faint:#94a3b8;
     --canvas:#fbfaf8; --panel:#ffffff; --line:#e6e9ee;
-    --shelter:#0d9488; --care:#059669; --pulse:#d97706; --transit:#0284c7; --market:#4f46e5;
+    --brand-50:#eef2fc; --brand-100:#d6e0f7; --brand-300:#7f9ae0; --brand-500:#2a49b8; --brand-600:#142d8c; --brand-700:#102270; --brand-900:#0a1642; --brand-text:#102270;
+    --alert-500:#e0323d; --alert-600:#c81e29; --alert-700:#a3141d;
+    --shelter:var(--brand-600); --care:var(--brand-600); --pulse:var(--brand-600); --transit:var(--brand-600); --market:var(--brand-600);
     --radius:16px;
     --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
   }
   :root.dark{
     --ink:#f8fafc; --soft:#cbd5e1; --muted:#94a3b8; --faint:#64748b;
     --canvas:#0f172a; --panel:#111827; --line:#334155;
+    --brand-text:#7f9ae0;
   }
   @media (prefers-color-scheme: dark){
     :root:not(.light){
       --ink:#f8fafc; --soft:#cbd5e1; --muted:#94a3b8; --faint:#64748b;
       --canvas:#0f172a; --panel:#111827; --line:#334155;
+      --brand-text:#7f9ae0;
     }
   }
   *{box-sizing:border-box}
@@ -28,20 +32,25 @@
   body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;line-height:1.55}
   a{color:inherit}
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-  header{position:sticky;top:0;z-index:10;background:rgba(251,250,248,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--panel) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1120px;margin:0 auto}
   .brand{font-weight:700;letter-spacing:-.01em}
   .nav a{margin-left:20px;color:var(--soft);text-decoration:none;font-size:14px;font-weight:500}
   .nav a:hover{color:var(--ink)}
-  .theme-toggle{margin-left:16px;border:1px solid var(--line);background:var(--panel);color:var(--soft);border-radius:10px;padding:7px 10px;font:600 13px/1 var(--font);cursor:pointer}
-  .theme-toggle:focus-visible{outline:2px solid var(--shelter);outline-offset:2px}
+  .theme-toggle{margin-left:16px;border:0;background:transparent;color:var(--soft);border-radius:999px;padding:4px;font:600 13px/1 var(--font);cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+  .theme-toggle:hover{color:var(--ink)}
+  .theme-toggle:focus-visible{outline:3px solid var(--brand-600);outline-offset:3px}
+  .switch-track{position:relative;display:inline-flex;width:44px;height:24px;border-radius:999px;border:1px solid var(--line);background:#f1f5f9;padding:2px;transition:background .2s ease,border-color .2s ease}
+  .switch-thumb{display:block;width:18px;height:18px;border-radius:999px;background:#fff;box-shadow:0 1px 2px rgba(15,23,42,.22);transition:transform .2s ease}
+  .theme-toggle[aria-checked="true"] .switch-track{background:var(--brand-600);border-color:var(--brand-600)}
+  .theme-toggle[aria-checked="true"] .switch-thumb{transform:translateX(20px)}
   .hero{padding:76px 0 40px}
-  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--shelter)}
+  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-text)}
   h1{font-size:clamp(34px,5vw,54px);line-height:1.05;letter-spacing:-.02em;margin:14px 0 0;max-width:16ch}
   .lede{font-size:19px;color:var(--soft);max-width:60ch;margin-top:18px}
   .cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:11px;font-size:14px;font-weight:600;text-decoration:none;border:1px solid transparent}
-  .btn-primary{background:var(--ink);color:#fff}
+  .btn-primary{background:var(--brand-600);color:#fff}
   .btn-ghost{background:var(--panel);border-color:var(--line);color:var(--soft)}
   .stats{display:flex;gap:36px;flex-wrap:wrap;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
   .stat b{display:block;font-size:26px;letter-spacing:-.01em}
@@ -52,7 +61,7 @@
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;position:relative;overflow:hidden}
   .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent)}
-  .card .sector{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+  .card .sector{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-text)}
   .card h3{font-size:20px;margin:8px 0 2px;letter-spacing:-.01em}
   .card .tag{font-size:14px;color:var(--muted);font-style:italic;margin-bottom:12px}
   .card p{font-size:14.5px;color:var(--soft);margin:0 0 14px}
@@ -64,7 +73,7 @@
   table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;font-size:14px}
   th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line)}
   th{background:#f8fafc;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:600}
-  td.dot{text-align:center;color:var(--shelter);font-weight:700}
+  td.dot{text-align:center;color:var(--brand-text);font-weight:700}
   tr:last-child td{border-bottom:none}
   .ethics{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
   .ethics ul{margin:12px 0 0;padding-left:20px;color:var(--soft);font-size:14.5px}
@@ -83,7 +92,10 @@
       <a href="#capabilities">Capabilities</a>
       <a href="#ethics">Data &amp; ethics</a>
       <a href="https://github.com/jsaintfleur" target="_blank" rel="noreferrer">GitHub</a>
-      <button class="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
+      <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Use dark mode">
+        <span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span>
+        <span class="switch-label">Dark mode</span>
+      </button>
     </nav>
   </div>
 </header>
@@ -207,8 +219,8 @@
       public repositories and several production applications.
     </p>
     <p style="margin-top:14px;font-size:14.5px;color:var(--muted)">
-      <a href="mailto:skjantoine@gmail.com" style="color:var(--shelter);font-weight:600;text-decoration:none">skjantoine@gmail.com</a>
-      &nbsp;·&nbsp; <a href="https://github.com/jsaintfleur" target="_blank" rel="noreferrer" style="color:var(--shelter);font-weight:600;text-decoration:none">github.com/jsaintfleur</a>
+      <a href="mailto:skjantoine@gmail.com" style="color:var(--brand-text);font-weight:600;text-decoration:none">skjantoine@gmail.com</a>
+      &nbsp;·&nbsp; <a href="https://github.com/jsaintfleur" target="_blank" rel="noreferrer" style="color:var(--brand-text);font-weight:600;text-decoration:none">github.com/jsaintfleur</a>
       &nbsp;·&nbsp; New York, NY &nbsp;·&nbsp; English · Français · Kreyòl Ayisyen
     </p>
   </section>
@@ -234,8 +246,10 @@
       root.classList.toggle("dark", isDark);
       root.classList.toggle("light", !isDark);
       if (button) {
-        button.setAttribute("aria-pressed", String(isDark));
-        button.textContent = isDark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-checked", String(isDark));
+        button.setAttribute("aria-label", isDark ? "Use light mode" : "Use dark mode");
+        var label = button.querySelector(".switch-label");
+        if (label) label.textContent = isDark ? "Light mode" : "Dark mode";
       }
     }
 
