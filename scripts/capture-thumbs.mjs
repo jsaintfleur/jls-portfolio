@@ -11,6 +11,7 @@ const { chromium } = requireFromShelterShield("playwright");
 
 const products = [
   { id: "sheltershield", url: "https://jls-sheltershield.vercel.app" },
+  { id: "compet2026", url: "https://wc2026-xi-gray.vercel.app" },
   { id: "careshed", url: "https://jls-careshed.vercel.app" },
   { id: "pulsecredit", url: "https://jls-pulsecredit.vercel.app" },
   { id: "transitshield", url: "https://jls-transitshield.vercel.app" },

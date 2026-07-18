@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" data-app-accent="haiti">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tableau Analytics - Jean-Luc Saint-Fleur Portfolio</title>
+<meta name="description" content="Tableau Analytics page for Jean-Luc Saint-Fleur's professional portfolio, with a truthful Tableau Public audit and future dashboard gallery groups." />
+<meta name="theme-color" content="#142d8c" />
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+<style>
+  :root{color-scheme:light;--ink:#0f172a;--soft:#334155;--muted:#64748b;--canvas:#fbfaf8;--panel:#fff;--line:#e2e8f0;--brand:#142d8c;--brand-soft:#eef2fc;--font:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  @media (prefers-color-scheme:dark){:root{color-scheme:dark;--ink:#f8fafc;--soft:#cbd5e1;--muted:#94a3b8;--canvas:#070b13;--panel:#111827;--line:#334155;--brand-soft:#0a1642}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--font);line-height:1.55}
+  a{color:inherit}
+  .wrap{width:min(1080px,calc(100% - 40px));margin:0 auto}
+  header{border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--panel) 92%,transparent);backdrop-filter:blur(12px);position:sticky;top:0}
+  .nav{height:60px;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-weight:900;text-decoration:none;letter-spacing:-.02em}
+  .back{color:var(--brand);font-weight:850;text-decoration:none}
+  main{padding:58px 0}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:900;color:var(--brand)}
+  h1{font-size:clamp(38px,6vw,70px);line-height:.95;letter-spacing:-.055em;margin:12px 0}
+  .lede{font-size:18px;color:var(--soft);max-width:72ch}
+  .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;margin-top:28px}
+  .card{border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:22px}
+  .card h2{font-size:24px;margin:0 0 10px;letter-spacing:-.03em}
+  .card p,.card li{color:var(--soft)}
+  .btn{display:inline-flex;margin-top:10px;border-radius:11px;background:var(--brand);color:#fff;text-decoration:none;font-weight:900;padding:10px 14px}
+  .topics{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
+  .topic{border:1px solid var(--line);border-radius:14px;background:var(--brand-soft);padding:14px;font-weight:850}
+  @media (max-width:780px){.grid,.topics{grid-template-columns:1fr}main{padding:34px 0}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="/">Jean-Luc Saint-Fleur Portfolio</a><a class="back" href="/">Back to portfolio</a></div></header>
+<main>
+  <div class="wrap">
+    <p class="eyebrow">Tableau Analytics</p>
+    <h1>Visualization work should be visible, interactive, and honest.</h1>
+    <p class="lede">This page is reserved for Tableau Public dashboards connected to Jean-Luc Saint-Fleur's portfolio. Public search found a likely Tableau Public profile, but no published visualizations are currently available to embed.</p>
+    <div class="grid">
+      <section class="card">
+        <h2>Current Tableau status</h2>
+        <p>No Tableau dashboards are being embedded yet because the public profile does not currently expose published visualizations. That keeps the portfolio accurate and avoids presenting placeholder work as finished work.</p>
+        <a class="btn" href="https://public.tableau.com/app/profile/saint.fleur" target="_blank" rel="noreferrer">Open Tableau Public profile</a>
+      </section>
+      <section class="card">
+        <h2>Future gallery groups</h2>
+        <div class="topics">
+          <div class="topic">Business Intelligence</div>
+          <div class="topic">Economics</div>
+          <div class="topic">Healthcare</div>
+          <div class="topic">Community Development</div>
+          <div class="topic">Finance</div>
+          <div class="topic">Sports Analytics</div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+</body>
+</html>
