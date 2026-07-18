@@ -58,8 +58,9 @@
   .theme-toggle[aria-checked=true] .switch-track{background:var(--brand-600);border-color:var(--brand-600)}
   .theme-toggle[aria-checked=true] .switch-thumb{transform:translateX(20px)}
   :focus-visible{outline:3px solid color-mix(in srgb,var(--brand-600) 72%,white);outline-offset:3px;border-radius:8px}
-  .hero{position:relative;overflow:hidden;padding:44px 0 22px}
-  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(330px,.92fr);gap:38px;align-items:center}
+  .hero{position:relative;overflow:hidden;padding:80px 0 28px}
+  /* ~56% content / ~44% visual; portrait top aligns with the eyebrow. */
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.27fr) minmax(300px,1fr);gap:48px;align-items:start}
   .eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brand-text)}
   h1{font-size:clamp(38px,5vw,58px);line-height:1.04;letter-spacing:-.03em;margin:10px 0 0;max-width:18ch}
   .lede{margin:16px 0 0;max-width:58ch;color:var(--soft);font-size:17px}
@@ -68,21 +69,16 @@
   .btn:hover{transform:translateY(-1px)}
   .btn-primary{background:var(--brand-600);color:#fff;box-shadow:0 12px 28px rgba(20,45,140,.22)}
   .btn-secondary{background:var(--panel);border-color:var(--line);color:var(--soft)}
-  .role-line{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;color:var(--brand-text);font-size:13px;font-weight:750}
-  .role-line span{border:1px solid color-mix(in srgb,var(--brand-600) 22%,var(--line));background:color-mix(in srgb,var(--brand-50) 68%,var(--panel));border-radius:999px;padding:5px 9px}
-  :root.dark .role-line span{background:color-mix(in srgb,var(--brand-900) 32%,var(--panel))}
-  .proof-card{border:1px solid var(--line);border-radius:22px;background:color-mix(in srgb,var(--panel) 84%,transparent);box-shadow:var(--shadow-soft);padding:18px;backdrop-filter:blur(10px)}
-  .proof-title{margin:0 0 12px;color:var(--soft);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-  .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .stat{min-height:82px;border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:14px}
-  .stat b{display:block;font-size:32px;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.04em}
-  .stat span{display:block;margin-top:7px;color:var(--muted);font-size:12.5px}
-  .hero-composition{margin:0 0 14px;padding:0 0 14px;border-bottom:1px solid var(--line)}
-  .hero-portrait{width:100%;height:auto;aspect-ratio:5/4;object-fit:cover;object-position:50% 18%;border:1px solid var(--line);border-radius:14px;background:var(--inset);box-shadow:0 8px 18px rgba(15,23,42,.08)}
-  .hero-composition figcaption{margin-top:10px;color:var(--muted);font-size:12.5px}
-  .proof-list{display:grid;gap:8px;margin:14px 0 0;padding:14px 0 0;border-top:1px solid var(--line);color:var(--soft);font-size:13px}
-  .proof-list span{display:flex;gap:8px;align-items:flex-start}
-  .proof-list span::before{content:"";flex:0 0 auto;width:8px;height:8px;margin-top:6px;border-radius:3px;background:var(--brand-600)}
+  /* Contained portrait: thin border, moderate radius, near-flat shadow.
+     Square crop keeps face and upper body central; ends near the buttons. */
+  .hero-figure{margin:6px 0 0}
+  .hero-portrait{width:100%;height:auto;max-height:480px;aspect-ratio:1/1;object-fit:cover;object-position:50% 30%;border:1px solid var(--line);border-radius:14px;background:var(--inset);box-shadow:0 1px 3px rgba(15,23,42,.06)}
+  .hero-figure figcaption{margin-top:8px;color:var(--muted);font-size:12px;line-height:1.45}
+  /* Verified statistics: their own full-width band directly below the hero. */
+  .hero-stats{padding:0 0 8px}
+  .stat-band{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;border-top:1px solid var(--line);padding-top:22px}
+  .stat b{display:block;font-size:28px;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.04em}
+  .stat span{display:block;margin-top:6px;color:var(--muted);font-size:12.5px}
   section{padding:34px 0}
   .section-head{display:flex;align-items:end;justify-content:space-between;gap:22px;margin-bottom:20px}
   h2{font-size:clamp(26px,3vw,38px);line-height:1.02;letter-spacing:-.04em;margin:0}
@@ -159,8 +155,8 @@
   .wordmark-line::before{content:"";width:24px;height:24px;border-radius:8px;background:var(--brand-600)}
   @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}.btn:hover,.product:hover,.product:focus-within{transform:none}}
   @media (min-width:1440px){.wrap{width:min(1240px,calc(100% - 64px))}.gallery{gap:22px}}
-  @media (max-width:980px){.hero-grid,.split,.spotlight{grid-template-columns:1fr}.skill-grid{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}.product,.product:nth-last-child(1):nth-child(odd){grid-column:auto}.cap-grid{grid-template-columns:minmax(160px,1fr) repeat(7,54px);overflow-x:auto}.proof-card{max-width:620px}}
-  @media (max-width:680px){.wrap{width:min(100% - 32px,1120px)}nav a{display:none}.nav{height:56px}.wordmark{font-size:15px}.hero{padding:26px 0 12px}.hero-grid{gap:18px}h1{font-size:34px}.lede{font-size:15.5px;margin-top:13px}.cta{margin-top:16px}.proof-card{padding:14px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.stat{min-height:72px;padding:11px}.stat b{font-size:27px}.stat span{font-size:12px}section{padding:28px 0}.skill-grid{grid-template-columns:1fr}.skill-card{min-height:0}.skill-card img{height:92px}.gallery{grid-template-columns:1fr}.section-head{display:block}.section-head .sub{margin-top:8px}.product{padding:12px}.split{gap:14px}.panel{padding:18px}.mini-grid{grid-template-columns:1fr}.cap-grid{grid-template-columns:150px repeat(7,50px)}}
+  @media (max-width:980px){.hero{padding:64px 0 24px}.hero-grid,.split,.spotlight{grid-template-columns:1fr}.hero-figure{margin-top:4px;max-width:560px}.hero-portrait{aspect-ratio:4/3;max-height:440px}.stat-band{grid-template-columns:1fr 1fr}.skill-grid{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}.product,.product:nth-last-child(1):nth-child(odd){grid-column:auto}.cap-grid{grid-template-columns:minmax(160px,1fr) repeat(7,54px);overflow-x:auto}}
+  @media (max-width:680px){.wrap{width:min(100% - 32px,1120px)}nav a{display:none}.nav{height:56px}.wordmark{font-size:15px}.hero{padding:40px 0 14px}.hero-grid{gap:22px}h1{font-size:34px}.lede{font-size:15.5px;margin-top:13px}.cta{margin-top:16px}.hero-figure{max-width:100%}.hero-portrait{aspect-ratio:4/3;max-height:400px}.stat-band{grid-template-columns:1fr 1fr;gap:8px;padding-top:16px}.stat b{font-size:24px}.stat span{font-size:12px}section{padding:28px 0}.skill-grid{grid-template-columns:1fr}.skill-card{min-height:0}.skill-card img{height:92px}.gallery{grid-template-columns:1fr}.section-head{display:block}.section-head .sub{margin-top:8px}.product{padding:12px}.split{gap:14px}.panel{padding:18px}.mini-grid{grid-template-columns:1fr}.cap-grid{grid-template-columns:150px repeat(7,50px)}}
 </style>
 </head>
 <body>
@@ -196,21 +192,20 @@
           <a class="btn btn-secondary" href="https://github.com/jsaintfleur" target="_blank" rel="noreferrer">GitHub</a>
         </div>
       </div>
-      <div class="proof-card" aria-label="Portrait and portfolio proof points">
-        <figure class="hero-composition" aria-label="Portrait of Jean-Luc Saint-Fleur">
-          <img class="hero-portrait" src="assets/personal/hero-portrait.webp" width="932" height="1400" loading="eager" fetchpriority="high" alt="Jean-Luc Saint-Fleur in a blue suit and black tie during a working session" />
-          <figcaption>Jean-Luc Saint-Fleur — economist, analytics professional, and product builder in New York.</figcaption>
-        </figure>
-        <div class="stats" aria-label="Portfolio summary">
-          <div class="stat"><b>7</b><span>live products, all deployed</span></div>
-          <div class="stat"><b>23</b><span>Tableau Public vizzes</span></div>
-          <div class="stat"><b>12+</b><span>public data sources</span></div>
-          <div class="stat"><b>3</b><span>geospatial decision tools</span></div>
-        </div>
-        <div class="proof-list">
-          <span>EconOS anchors the portfolio with economics, forecasts, and policy scenarios.</span>
-          <span>Each product connects analysis to a real decision workflow.</span>
-        </div>
+      <figure class="hero-figure">
+        <img class="hero-portrait" src="assets/personal/hero-portrait.webp" width="932" height="1400" loading="eager" fetchpriority="high" alt="Jean-Luc Saint-Fleur seated in a professional office setting, wearing a blue suit and black tie" />
+        <figcaption>Jean-Luc Saint-Fleur — economist, analytics professional and product builder based in New York.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="hero-stats" aria-label="Portfolio summary">
+    <div class="wrap">
+      <div class="stat-band">
+        <div class="stat"><b>7</b><span>deployed products</span></div>
+        <div class="stat"><b>23</b><span>Tableau Public visualizations</span></div>
+        <div class="stat"><b>12+</b><span>public data sources</span></div>
+        <div class="stat"><b>3</b><span>geospatial decision tools</span></div>
       </div>
     </div>
   </section>
