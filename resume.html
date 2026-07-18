@@ -45,6 +45,10 @@
   .btn-secondary{background:var(--panel);border-color:var(--line);color:var(--soft)}
   .summary{margin:26px 0 0;border:1px solid var(--line);border-radius:16px;background:var(--panel);box-shadow:var(--shadow);padding:20px 22px;color:var(--soft);font-size:15.5px;max-width:100%}
   .summary b{color:var(--ink)}
+  /* Header: identity text on the left, portrait filling the top-right. */
+  .head-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,340px);gap:32px;align-items:center}
+  .head-portrait{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border:1px solid var(--line);border-radius:16px;background:var(--inset);box-shadow:var(--shadow)}
+  @media (max-width:820px){.head-grid{grid-template-columns:1fr}.head-portrait{max-width:340px;aspect-ratio:5/4}}
   .layout{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:24px;margin-top:26px;align-items:start}
   .col{display:grid;gap:18px}
   .panel{border:1px solid var(--line);border-radius:16px;background:var(--panel);box-shadow:var(--shadow);padding:20px}
@@ -94,17 +98,22 @@
 <main id="main">
   <div class="wrap">
     <section aria-labelledby="resume-title">
-      <p class="eyebrow">Resume</p>
-      <h1 id="resume-title">Jean-Luc A. Saint-Fleur</h1>
-      <p class="subtitle">Community Development · AI &amp; Software Engineering · Program, Finance &amp; Government Partnerships</p>
-      <p class="contact-line">
-        <span>New York, NY</span>
-        <a href="mailto:skjantoine@gmail.com">skjantoine@gmail.com</a>
-        <a href="https://github.com/jsaintfleur" target="_blank" rel="noreferrer">github.com/jsaintfleur</a>
-      </p>
-      <div class="head-actions">
-        <a class="btn btn-primary" href="/assets/docs/Jean-Luc_Saint-Fleur_Resume.pdf" download>Download PDF</a>
-        <a class="btn btn-secondary" href="/#products">See the product portfolio</a>
+      <div class="head-grid">
+        <div>
+          <p class="eyebrow">Resume</p>
+          <h1 id="resume-title">Jean-Luc A. Saint-Fleur</h1>
+          <p class="subtitle">Community Development · AI &amp; Software Engineering · Program, Finance &amp; Government Partnerships</p>
+          <p class="contact-line">
+            <span>New York, NY</span>
+            <a href="mailto:skjantoine@gmail.com">skjantoine@gmail.com</a>
+            <a href="https://github.com/jsaintfleur" target="_blank" rel="noreferrer">github.com/jsaintfleur</a>
+          </p>
+          <div class="head-actions">
+            <a class="btn btn-primary" href="/assets/docs/Jean-Luc_Saint-Fleur_Resume.pdf" download>Download PDF</a>
+            <a class="btn btn-secondary" href="/#products">See the product portfolio</a>
+          </div>
+        </div>
+        <img class="head-portrait" src="/assets/personal/hero-portrait.webp" width="932" height="1400" loading="eager" fetchpriority="high" alt="Jean-Luc Saint-Fleur in a blue suit and black tie" />
       </div>
       <p class="summary"><b>I build technology inspired by the communities I serve.</b> Senior community development professional with nine years administering federal grant, contract, and program portfolios — currently LISC New York's statewide HUD Section 4 portfolio (~$770K / 13 grants) and a $6M+ NYCHA PACT consultant task order portfolio — paired with production AI and software engineering. I find problems in affordable housing, workforce development, and government-funded programs, then design, build, and deploy the products that solve them: a live sports platform with a data-integrity pipeline, an AI job-access platform for Haitian youth, a backtested FX decision-support system. Partner daily with consultants, executive directors, finance, legal, and public agencies, translating analysis into recommendations executive leadership and funders act on.</p>
     </section>
