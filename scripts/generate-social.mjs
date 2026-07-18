@@ -43,9 +43,9 @@ const html = `<!doctype html>
       <p>I turn public data into decisions.</p>
     </div>
     <div class="marks" aria-hidden="true">
-      <div class="mark">S</div><div class="mark">C</div><div class="mark">P</div><div class="mark">T</div><div class="mark">M</div>
+      <div class="mark">S</div><div class="mark">C</div><div class="mark">P</div><div class="mark">T</div><div class="mark">M</div><div class="mark">E</div>
     </div>
-    <div class="name">Five production-grade public-data products</div>
+    <div class="name">Six production-grade public-data products</div>
   </main>
 </body>
 </html>`;

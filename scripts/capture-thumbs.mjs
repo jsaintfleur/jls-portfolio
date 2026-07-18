@@ -15,6 +15,7 @@ const products = [
   { id: "pulsecredit", url: "https://jls-pulsecredit.vercel.app" },
   { id: "transitshield", url: "https://jls-transitshield.vercel.app" },
   { id: "marketplace-compass", url: "https://jls-marketplace-compass.vercel.app" },
+  { id: "econos", url: "https://econos-sooty.vercel.app" },
 ];
 
 const outDir = path.join(root, "assets", "thumbs");
