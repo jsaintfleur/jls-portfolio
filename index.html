@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-app-accent="shelter">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,6 +13,16 @@
     --radius:16px;
     --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
   }
+  :root.dark{
+    --ink:#f8fafc; --soft:#cbd5e1; --muted:#94a3b8; --faint:#64748b;
+    --canvas:#0f172a; --panel:#111827; --line:#334155;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not(.light){
+      --ink:#f8fafc; --soft:#cbd5e1; --muted:#94a3b8; --faint:#64748b;
+      --canvas:#0f172a; --panel:#111827; --line:#334155;
+    }
+  }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;line-height:1.55}
@@ -23,6 +33,8 @@
   .brand{font-weight:700;letter-spacing:-.01em}
   .nav a{margin-left:20px;color:var(--soft);text-decoration:none;font-size:14px;font-weight:500}
   .nav a:hover{color:var(--ink)}
+  .theme-toggle{margin-left:16px;border:1px solid var(--line);background:var(--panel);color:var(--soft);border-radius:10px;padding:7px 10px;font:600 13px/1 var(--font);cursor:pointer}
+  .theme-toggle:focus-visible{outline:2px solid var(--shelter);outline-offset:2px}
   .hero{padding:76px 0 40px}
   .eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--shelter)}
   h1{font-size:clamp(34px,5vw,54px);line-height:1.05;letter-spacing:-.02em;margin:14px 0 0;max-width:16ch}
@@ -71,6 +83,7 @@
       <a href="#capabilities">Capabilities</a>
       <a href="#ethics">Data &amp; ethics</a>
       <a href="https://github.com/jsaintfleur" target="_blank" rel="noreferrer">GitHub</a>
+      <button class="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
     </nav>
   </div>
 </header>
@@ -208,5 +221,32 @@
     <p style="color:var(--faint)">Built with Next.js, TypeScript, Python, and public data; deployed on Vercel. Demonstration analytics on public data — not investment, legal, medical, or policy advice.</p>
   </div>
 </footer>
+<script>
+  (function () {
+    var root = document.documentElement;
+    var button = document.querySelector(".theme-toggle");
+    var saved = window.localStorage.getItem("jls-theme");
+    var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var isDark = saved ? saved === "dark" : prefersDark;
+
+    function applyTheme(nextDark) {
+      isDark = nextDark;
+      root.classList.toggle("dark", isDark);
+      root.classList.toggle("light", !isDark);
+      if (button) {
+        button.setAttribute("aria-pressed", String(isDark));
+        button.textContent = isDark ? "Light mode" : "Dark mode";
+      }
+    }
+
+    applyTheme(isDark);
+    if (button) {
+      button.addEventListener("click", function () {
+        applyTheme(!isDark);
+        window.localStorage.setItem("jls-theme", isDark ? "dark" : "light");
+      });
+    }
+  })();
+</script>
 </body>
 </html>
