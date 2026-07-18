@@ -38,9 +38,9 @@ const html = `<!doctype html>
   <div class="grid"></div>
   <main>
     <div>
-      <div class="eyebrow">Data · Analytics · Applied AI</div>
+      <div class="eyebrow">Data & AI Portfolio</div>
       <h1>Jean-Luc Saint-Fleur</h1>
-      <p>I turn public data into decisions.</p>
+      <p>Geospatial analysis · forecasting · ML · executive dashboards</p>
     </div>
     <div class="marks" aria-hidden="true">
       <div class="mark">S</div><div class="mark">C</div><div class="mark">P</div><div class="mark">T</div><div class="mark">M</div><div class="mark">E</div>

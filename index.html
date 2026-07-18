@@ -4,16 +4,16 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Jean-Luc Saint-Fleur - Data & AI Portfolio</title>
-<meta name="description" content="Six production-grade data products across housing, finance, healthcare, retail, transportation, and economics - turning public data into decisions." />
+<meta name="description" content="Jean-Luc Saint-Fleur's Data & AI portfolio: six production-grade public-data products showing geospatial analysis, forecasting, ML, dashboards, and business storytelling." />
 <meta name="theme-color" content="#142d8c" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Jean-Luc Saint-Fleur - Data & AI Portfolio" />
-<meta property="og:description" content="I turn public data into decisions through production-grade analytics products." />
+<meta property="og:description" content="A Data & AI portfolio showing geospatial analysis, forecasting, ML, dashboards, and business storytelling through six live public-data products." />
 <meta property="og:image" content="https://jls-portfolio-zeta.vercel.app/assets/social-preview.png" />
 <meta property="og:url" content="https://jls-portfolio-zeta.vercel.app/" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Jean-Luc Saint-Fleur - Data & AI Portfolio" />
-<meta name="twitter:description" content="Six production-grade public-data products for business decisions." />
+<meta name="twitter:description" content="Data & AI portfolio: six live public-data products across maps, forecasts, ML, dashboards, and strategy." />
 <meta name="twitter:image" content="https://jls-portfolio-zeta.vercel.app/assets/social-preview.png" />
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
 <style>
@@ -72,7 +72,9 @@
     linear-gradient(135deg,transparent 20%,rgba(20,45,140,.10),transparent 70%);
     filter:blur(.2px)}
   .eyebrow{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--brand-text)}
-  h1{font-size:clamp(42px,6vw,72px);line-height:.93;letter-spacing:-.055em;margin:12px 0 0;max-width:10.5ch}
+  .portfolio-kicker{display:inline-flex;align-items:center;gap:9px;margin:0 0 14px;border:1px solid color-mix(in srgb,var(--brand-600) 24%,var(--line));background:color-mix(in srgb,var(--brand-50) 74%,var(--panel));color:var(--brand-text);border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+  :root.dark .portfolio-kicker{background:color-mix(in srgb,var(--brand-900) 42%,var(--panel));border-color:color-mix(in srgb,var(--brand-300) 28%,var(--line))}
+  h1{font-size:clamp(42px,6vw,72px);line-height:.93;letter-spacing:-.055em;margin:8px 0 0;max-width:10.5ch}
   .lede{margin:16px 0 0;max-width:56ch;color:var(--soft);font-size:17px}
   .impact-line{margin:16px 0 0;display:flex;flex-wrap:wrap;gap:8px;color:var(--soft);font-size:13px;font-weight:800}
   .impact-line span{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:color-mix(in srgb,var(--panel) 78%,transparent);border-radius:999px;padding:6px 10px}
@@ -98,6 +100,13 @@
   .section-head{display:flex;align-items:end;justify-content:space-between;gap:22px;margin-bottom:20px}
   h2{font-size:clamp(26px,3vw,38px);line-height:1.02;letter-spacing:-.04em;margin:0}
   .sub{margin:0;max-width:58ch;color:var(--muted);font-size:15px}
+  .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .skill-card{position:relative;overflow:hidden;min-height:230px;border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:12px;box-shadow:var(--shadow-soft);display:flex;flex-direction:column;justify-content:space-between}
+  .skill-card img{width:100%;height:76px;object-fit:cover;border:1px solid var(--line);border-radius:12px;background:var(--inset);margin-bottom:12px}
+  .skill-card h3{margin:0;font-size:18px;letter-spacing:-.02em}
+  .skill-card p{margin:8px 0 0;color:var(--soft);font-size:13.5px}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .skill-tags span{border:1px solid var(--line);background:color-mix(in srgb,var(--panel) 82%,transparent);border-radius:999px;padding:4px 8px;color:var(--soft);font-size:11.5px;font-weight:800}
   .gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
   .product{grid-column:span 2;position:relative;display:flex;flex-direction:column;min-height:100%;border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:12px;box-shadow:0 1px 2px rgba(15,23,42,.04);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
   .product:hover,.product:focus-within{transform:translateY(-4px);box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--accent) 42%,var(--line))}
@@ -142,16 +151,17 @@
   @keyframes gridDrift{from{background-position:0 0,0 0}to{background-position:68px 34px,68px 34px}}
   @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}.motif::before{animation:none}.btn:hover,.product:hover,.product:focus-within{transform:none}}
   @media (min-width:1440px){.wrap{width:min(1240px,calc(100% - 64px))}.motif{width:620px;height:390px}.gallery{gap:22px}}
-  @media (max-width:980px){.hero-grid,.split{grid-template-columns:1fr}.motif{width:70vw;opacity:.36}.gallery{grid-template-columns:1fr 1fr}.product{grid-column:auto}.cap-grid{grid-template-columns:minmax(160px,1fr) repeat(6,54px);overflow-x:auto}.proof-card{max-width:620px}}
-  @media (max-width:680px){.wrap{width:min(100% - 32px,1120px)}nav a{display:none}.nav{height:56px}.wordmark{font-size:15px}.hero{padding:26px 0 12px}.hero-grid{gap:18px}.motif{display:none}h1{font-size:38px}.lede{font-size:15.5px;margin-top:13px}.impact-line{font-size:12.5px}.cta{margin-top:16px}.proof-card{padding:14px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.stat{min-height:72px;padding:11px}.stat b{font-size:27px}.stat span{font-size:12px}.preview-mosaic{grid-template-columns:repeat(3,1fr);gap:6px}.preview-mosaic img{aspect-ratio:16/10;border-radius:8px}.preview-mosaic img:nth-child(even){transform:none}section{padding:28px 0}.gallery{grid-template-columns:1fr}.section-head{display:block}.section-head .sub{margin-top:8px}.product{padding:12px}.split{gap:14px}.panel{padding:18px}.cap-grid{grid-template-columns:150px repeat(6,50px)}}
+  @media (max-width:980px){.hero-grid,.split{grid-template-columns:1fr}.motif{width:70vw;opacity:.36}.skill-grid{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}.product{grid-column:auto}.cap-grid{grid-template-columns:minmax(160px,1fr) repeat(6,54px);overflow-x:auto}.proof-card{max-width:620px}}
+  @media (max-width:680px){.wrap{width:min(100% - 32px,1120px)}nav a{display:none}.nav{height:56px}.wordmark{font-size:15px}.hero{padding:26px 0 12px}.hero-grid{gap:18px}.motif{display:none}.portfolio-kicker{font-size:11px;margin-bottom:12px}h1{font-size:38px}.lede{font-size:15.5px;margin-top:13px}.impact-line{font-size:12.5px}.cta{margin-top:16px}.proof-card{padding:14px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.stat{min-height:72px;padding:11px}.stat b{font-size:27px}.stat span{font-size:12px}.preview-mosaic{grid-template-columns:repeat(3,1fr);gap:6px}.preview-mosaic img{aspect-ratio:16/10;border-radius:8px}.preview-mosaic img:nth-child(even){transform:none}section{padding:28px 0}.skill-grid{grid-template-columns:1fr}.skill-card{min-height:0}.skill-card img{height:92px}.gallery{grid-template-columns:1fr}.section-head{display:block}.section-head .sub{margin-top:8px}.product{padding:12px}.split{gap:14px}.panel{padding:18px}.cap-grid{grid-template-columns:150px repeat(6,50px)}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header>
   <div class="wrap nav" role="navigation" aria-label="Primary">
-    <a class="wordmark" href="#main">Jean-Luc Saint-Fleur</a>
+    <a class="wordmark" href="#main">Jean-Luc Saint-Fleur Portfolio</a>
     <nav>
+      <a href="#skills">Skills</a>
       <a href="#products">Products</a>
       <a href="#capabilities">Capabilities</a>
       <a href="#ethics">Data &amp; ethics</a>
@@ -168,7 +178,8 @@
     <div class="motif" aria-hidden="true"></div>
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow">Data · Analytics · Applied AI</p>
+        <p class="portfolio-kicker">Data &amp; AI Portfolio</p>
+        <p class="eyebrow">Public data products · Decision systems · Executive dashboards</p>
         <h1 id="hero-title">I turn public data into decisions.</h1>
         <p class="lede">Six production-grade analytics products translate messy public datasets into clear choices for housing, health, finance, transit, retail, and economic-policy leaders.</p>
         <div class="impact-line" aria-label="Portfolio strengths">
@@ -202,6 +213,71 @@
           <span>Each product keeps method, limits, and source provenance visible.</span>
           <span>Business copy is written for operators who need to act.</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="skills-title">Skillsets shown in the work</h2>
+        <p class="sub">The portfolio demonstrates end-to-end product judgment: data engineering, modeling, interface design, and business storytelling.</p>
+      </div>
+      <div class="skill-grid">
+        <article class="skill-card">
+          <img src="assets/thumbs/sheltershield.webp" width="800" height="500" loading="lazy" alt="" aria-hidden="true" />
+          <div>
+            <p class="eyebrow">Maps &amp; Place-Based Risk</p>
+            <h3>Geospatial decision intelligence</h3>
+            <p>Choropleths, ranked places, drill-down patterns, and risk maps for housing, care access, and transit resilience.</p>
+          </div>
+          <div class="skill-tags"><span>Map UX</span><span>Risk scoring</span><span>Prioritization</span></div>
+        </article>
+        <article class="skill-card">
+          <img src="assets/thumbs/pulsecredit.webp" width="800" height="500" loading="lazy" alt="" aria-hidden="true" />
+          <div>
+            <p class="eyebrow">Forecasts &amp; Scenarios</p>
+            <h3>Analytical modeling for choices</h3>
+            <p>Forecast bands, scenario simulators, anomaly views, and plain-language uncertainty for financial and economic decisions.</p>
+          </div>
+          <div class="skill-tags"><span>Forecasting</span><span>Scenario design</span><span>Uncertainty</span></div>
+        </article>
+        <article class="skill-card">
+          <img src="assets/thumbs/marketplace-compass.webp" width="800" height="500" loading="lazy" alt="" aria-hidden="true" />
+          <div>
+            <p class="eyebrow">Models &amp; Operators</p>
+            <h3>ML, segmentation, and model cards</h3>
+            <p>Retention modeling, calibration, segment playbooks, and decision thresholds framed for business users.</p>
+          </div>
+          <div class="skill-tags"><span>Machine learning</span><span>Segmentation</span><span>Model cards</span></div>
+        </article>
+        <article class="skill-card">
+          <img src="assets/thumbs/careshed.webp" width="800" height="500" loading="lazy" alt="" aria-hidden="true" />
+          <div>
+            <p class="eyebrow">Pipelines &amp; QA</p>
+            <h3>Reproducible public-data products</h3>
+            <p>Public datasets are transformed into validated outputs with source provenance, caveats, and schema gates where repo-backed.</p>
+          </div>
+          <div class="skill-tags"><span>ETL</span><span>Validation</span><span>Public data</span></div>
+        </article>
+        <article class="skill-card">
+          <img src="assets/thumbs/transitshield.webp" width="800" height="500" loading="lazy" alt="" aria-hidden="true" />
+          <div>
+            <p class="eyebrow">Dashboards &amp; UX</p>
+            <h3>Executive interfaces that invite action</h3>
+            <p>Dense but readable dashboards, clear KPI hierarchy, mobile layouts, dark mode, and export-oriented workflows.</p>
+          </div>
+          <div class="skill-tags"><span>Product design</span><span>Accessibility</span><span>Dashboards</span></div>
+        </article>
+        <article class="skill-card">
+          <img src="assets/thumbs/econos.webp" width="800" height="500" loading="lazy" alt="" aria-hidden="true" />
+          <div>
+            <p class="eyebrow">Narrative &amp; Strategy</p>
+            <h3>Business translation for stakeholders</h3>
+            <p>Each app turns technical analysis into “what it means,” “what to do next,” and “what to trust.”</p>
+          </div>
+          <div class="skill-tags"><span>Executive writing</span><span>Strategy</span><span>Decision support</span></div>
+        </article>
       </div>
     </div>
   </section>
