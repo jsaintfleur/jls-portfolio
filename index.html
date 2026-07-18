@@ -142,7 +142,14 @@
   .tableau-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
   .tableau-actions a{border:1px solid var(--line);border-radius:10px;padding:8px 11px;text-decoration:none;font-size:13px;font-weight:750;color:var(--soft)}
   .tableau-actions a:first-child{background:var(--brand-600);border-color:transparent;color:#fff}
-  .about-text{color:var(--soft);font-size:15.5px;max-width:76ch}
+  .about-text{color:var(--soft);font-size:15.5px;line-height:1.65;max-width:76ch}
+  .about-text + .about-text{margin-top:14px}
+  /* Career at a glance: compact timeline rows inside the About panel. */
+  .glance{margin:22px 0 0;padding:18px 0 0;border-top:1px solid var(--line)}
+  .glance h3{margin:0 0 12px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-text);font-weight:600}
+  .glance-row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;padding:7px 0;font-size:13.5px}
+  .glance-row b{color:var(--muted);font-weight:600;font-variant-numeric:tabular-nums}
+  .glance-row span{color:var(--soft)}
   /* Contact cards: labeled tiles instead of a run of inline links. */
   .contact-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
   .contact-card{display:block;border:1px solid var(--line);border-radius:12px;background:var(--inset);padding:12px 14px;text-decoration:none;transition:border-color .15s ease,background .15s ease}
@@ -471,7 +478,17 @@
       <div class="panel">
         <p class="eyebrow">About</p>
         <h2 id="about-title">Built from the work, not around it.</h2>
-        <p class="about-text">I build technology inspired by the communities I serve. With nine years administering federal grant, contract, and program portfolios - currently steering LISC New York's statewide HUD Section 4 portfolio and a $6M+ NYCHA PACT task-order portfolio, and leading LISC NY's AI and data strategy - I find problems in affordable housing, workforce development, and government-funded programs, then design, build, and ship products that solve them.</p>
+        <p class="about-text">I build technology inspired by the communities I serve. With nine years administering federal grant, contract, and program portfolios — currently steering LISC New York's statewide HUD Section 4 portfolio and a $6M+ NYCHA PACT task-order portfolio, and leading LISC NY's AI and data strategy — I find problems in affordable housing, workforce development, and government-funded programs, then design, build, and ship products that solve them.</p>
+        <p class="about-text">The foundation is economics: a B.A. and an M.S. from Brooklyn College's Koppelman School of Business, later sharpened by General Assembly's Data Analytics Immersive and Columbia Engineering's AI Engineering Boot Camp. Nine years across The Doe Fund and LISC taught me how government-funded programs actually run — contracts, compliance, budgets, and the people behind them — which is why every product here starts from a real operating problem rather than a dataset.</p>
+        <p class="about-text">The rest of the story is in the photos above: captain of Brooklyn College's soccer team, NCAA Division III honors, trips planned around football matches, and a Haitian heritage I build for directly — KonekTravay, my AI job-access platform, works over WhatsApp in Kreyòl, French, and English because that is what its users actually have.</p>
+        <div class="glance">
+          <h3>Career at a glance</h3>
+          <div class="glance-row"><b>2024 —</b><span>LISC New York · Senior Community Development Officer</span></div>
+          <div class="glance-row"><b>2017 – 24</b><span>The Doe Fund · Director of Business Operations</span></div>
+          <div class="glance-row"><b>2025</b><span>Columbia Engineering · AI Engineering Boot Camp</span></div>
+          <div class="glance-row"><b>2023</b><span>General Assembly · Data Analytics Immersive</span></div>
+          <div class="glance-row"><b>2017 / 18</b><span>Brooklyn College · B.A. Economics, M.S. Business Administration</span></div>
+        </div>
       </div>
       <div class="panel">
         <img class="about-portrait" src="assets/personal/portrait-niagara.webp" width="1200" height="800" loading="lazy" alt="Portrait of Jean-Luc Saint-Fleur in a blue blazer at Niagara Falls" />
