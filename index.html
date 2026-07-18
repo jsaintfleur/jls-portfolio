@@ -151,6 +151,14 @@
   .tableau-mini a{display:block;border:1px solid var(--line);border-radius:12px;background:var(--inset);padding:8px;text-decoration:none;color:var(--soft);font-size:12.5px;font-weight:700}
   .tableau-mini img{width:100%;aspect-ratio:16/10;object-fit:cover;border:1px solid var(--line);border-radius:8px;background:var(--panel);margin-bottom:7px}
   .about-text{color:var(--soft);font-size:15.5px;max-width:76ch}
+  .about-portrait{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border:1px solid var(--line);border-radius:14px;background:var(--inset);margin-bottom:16px}
+  /* Personal gallery: real photos, plain captions, no decoration. */
+  .life-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .life-card{margin:0;border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:10px;box-shadow:var(--shadow-soft)}
+  .life-card img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line);border-radius:11px;background:var(--inset)}
+  .life-card figcaption{margin-top:9px;color:var(--soft);font-size:13px}
+  @media (max-width:980px){.life-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:680px){.life-grid{grid-template-columns:1fr 1fr;gap:10px}.life-card{padding:8px}.life-card figcaption{font-size:12px}}
   .contact{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
   .contact a{color:var(--brand-text);font-weight:700;text-decoration:none}
   footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:13px}
@@ -440,6 +448,41 @@
     </div>
   </section>
 
+  <section id="beyond" aria-labelledby="beyond-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="beyond-title">Beyond the work</h2>
+        <p class="sub">The same person who builds the dashboards: a former college soccer captain from Brooklyn who still plans trips around football matches.</p>
+      </div>
+      <div class="life-grid">
+        <figure class="life-card">
+          <img src="assets/personal/speaking.webp" width="1200" height="800" loading="lazy" alt="Jean-Luc presenting from a laptop during a data-strategy working session" />
+          <figcaption>Leading a data-strategy session in New York</figcaption>
+        </figure>
+        <figure class="life-card">
+          <img src="assets/personal/soccer-action.webp" width="1200" height="795" loading="lazy" alt="Jean-Luc wearing the captain's armband, dribbling during a Brooklyn College soccer match" />
+          <figcaption>Captain, Brooklyn College men's soccer</figcaption>
+        </figure>
+        <figure class="life-card">
+          <img src="assets/personal/soccer-celebration.webp" width="900" height="597" loading="lazy" alt="Jean-Luc celebrating a goal with a teammate at Brooklyn College" />
+          <figcaption>Celebrating a goal for the Bulldogs</figcaption>
+        </figure>
+        <figure class="life-card">
+          <img src="assets/personal/ncaa-awards.webp" width="539" height="360" loading="lazy" alt="Jean-Luc holding two awards in front of an NCAA Division III Brooklyn Bulldogs backdrop" />
+          <figcaption>NCAA Division III honors night</figcaption>
+        </figure>
+        <figure class="life-card">
+          <img src="assets/personal/barcelona.webp" width="1200" height="675" loading="lazy" alt="View from the stands of a packed FC Barcelona match at the Olympic stadium in Barcelona" />
+          <figcaption>Match day at FC Barcelona — football is the throughline</figcaption>
+        </figure>
+        <figure class="life-card">
+          <img src="assets/personal/prospect-park.webp" width="900" height="1200" loading="lazy" alt="Fall foliage over a park drive in Prospect Park, Brooklyn" />
+          <figcaption>Prospect Park, Brooklyn — home turf</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <section id="about" aria-labelledby="about-title">
     <div class="wrap split">
       <div class="panel">
@@ -448,6 +491,7 @@
         <p class="about-text">I build technology inspired by the communities I serve. With nine years administering federal grant, contract, and program portfolios - currently steering LISC New York's statewide HUD Section 4 portfolio and a $6M+ NYCHA PACT task-order portfolio, and leading LISC NY's AI and data strategy - I find problems in affordable housing, workforce development, and government-funded programs, then design, build, and ship products that solve them.</p>
       </div>
       <div class="panel">
+        <img class="about-portrait" src="assets/personal/portrait-niagara.webp" width="1200" height="800" loading="lazy" alt="Portrait of Jean-Luc Saint-Fleur in a blue blazer at Niagara Falls" />
         <h3>Jean-Luc A. Saint-Fleur</h3>
         <p class="about-text">Senior community-development professional · AI &amp; software engineering · New York, NY. This portfolio spans ingestion, modeling, geospatial and statistical analysis, machine learning, and production web delivery, with a consistent emphasis on reproducibility and uncertainty.</p>
         <div class="contact">
