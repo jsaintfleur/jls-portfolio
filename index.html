@@ -160,6 +160,11 @@
   .audit-list .panel{padding:18px}
   .audit-list h3{font-size:18px}
   .audit-list p{color:var(--soft);font-size:13.5px;margin:0}
+  .tableau-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .tableau-actions a{border:1px solid var(--line);border-radius:10px;padding:8px 11px;text-decoration:none;font-size:13px;font-weight:900;color:var(--soft)}
+  .tableau-actions a:first-child{background:var(--brand-600);border-color:transparent;color:#fff}
+  .tableau-mini{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
+  .tableau-mini a{display:block;border:1px solid var(--line);border-radius:12px;background:var(--inset);padding:10px;text-decoration:none;color:var(--soft);font-size:12.5px;font-weight:850}
   .about-text{color:var(--soft);font-size:15.5px;max-width:76ch}
   .contact{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
   .contact a{color:var(--brand-text);font-weight:800;text-decoration:none}
@@ -392,21 +397,21 @@
     <div class="wrap split">
       <div class="panel">
         <p class="eyebrow">Tableau Analytics</p>
-        <h2 id="tableau-title">Tableau is tracked as a core visualization channel.</h2>
-        <p class="sub">Public search located a likely Tableau Public profile for Saint Fleur, but no published visualizations are currently visible. The portfolio therefore presents Tableau honestly as a channel to activate, not as a fabricated dashboard gallery.</p>
-        <div class="contact">
+        <h2 id="tableau-title">Tableau Analytics Collection</h2>
+        <p class="sub">The Tableau Public profile lists 23 vizzes. I feature the public dashboards that loaded reliably in audit and route visitors to the full Tableau profile for the complete collection.</p>
+        <div class="tableau-actions">
           <a href="tableau.html">Open Tableau Analytics page</a>
-          <a href="https://public.tableau.com/app/profile/saint.fleur" target="_blank" rel="noreferrer">Tableau Public profile</a>
+          <a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/vizzes" target="_blank" rel="noreferrer">Full Tableau profile</a>
         </div>
       </div>
       <div class="panel">
-        <h3>Planned Tableau gallery groups</h3>
-        <ul>
-          <li><b>Business Intelligence:</b> KPI dashboards, performance measurement, operations.</li>
-          <li><b>Economics:</b> indicators, forecasts, household impact, regional analysis.</li>
-          <li><b>Healthcare and Community Development:</b> equity metrics, program outcomes, place-based need.</li>
-          <li><b>Finance and Sports Analytics:</b> risk trends, tournament intelligence, interactive exploration.</li>
-        </ul>
+        <h3>Featured Tableau dashboards</h3>
+        <div class="tableau-mini">
+          <a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/HeatmapforTicketIssuance/Violations" target="_blank" rel="noreferrer">Traffic ticket heat map</a>
+          <a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/NYSNonprofitDatabase/Dashboard3" target="_blank" rel="noreferrer">NYS nonprofit database</a>
+          <a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/NYCCollisions-InDepthAnalysis/InsightsintoNYCCollisionsContributingFactorsCollisionTrendsbyBoroughandZipCodeMapping" target="_blank" rel="noreferrer">NYC collisions analysis</a>
+          <a href="https://public.tableau.com/app/profile/jeanlucsaintfleur/viz/SuperstoreProfitDashboard_16866700428150/ProfitDashboard" target="_blank" rel="noreferrer">Superstore profit dashboard</a>
+        </div>
       </div>
     </div>
   </section>

@@ -15,7 +15,7 @@ Weaknesses addressed:
 - GitHub inventory was not classified for hiring relevance.
 
 Remaining watch items:
-- Add true Tableau dashboards once published on Tableau Public.
+- Embed selected Tableau dashboards later only if embed performance and responsiveness stay strong.
 - Add dedicated long-form case-study pages for the top projects if deeper recruiter review becomes the goal.
 - Keep older bootcamp repositories off the homepage unless rewritten with polished screenshots and business context.
 
@@ -30,6 +30,7 @@ Remaining watch items:
 | PulseCredit | Featured Project | 8 | Financial risk, forecasting, scenarios, anomaly detection. |
 | TransitShield | Featured Project | 8 | Transit resilience, exposure/risk mapping, capital planning. |
 | Marketplace Compass | Featured Project | 8 | ML model card, segmentation, retention/business decisions. |
+| Tableau Analytics Collection | Featured / Supporting Collection | 8 | Tableau Public profile lists 23 vizzes; 12 audit-visible dashboards are featured as launch cards. |
 | jls-portfolio | Featured Project | 8 | Portfolio hub demonstrating UX, static performance, and IA. |
 
 ## GitHub Audit Summary
@@ -58,13 +59,14 @@ Archive or improve later:
 ## Tableau Public Audit
 
 Finding:
-- Public search located a likely Tableau Public profile at `https://public.tableau.com/app/profile/saint.fleur`.
-- The profile currently shows no published visualizations available to embed.
+- User provided the correct Tableau Public profile at `https://public.tableau.com/app/profile/jeanlucsaintfleur/vizzes`.
+- The profile reports 23 published vizzes.
+- The public listing reliably exposed 12 dashboard/story links during audit.
 
 Decision:
-- Do not fabricate Tableau dashboards.
-- Add a truthful Tableau section that links to the profile and states the planned gallery groups.
-- Once dashboards are published, embed them or create launch cards grouped by Business Intelligence, Economics, Healthcare, Community Development, Finance, and Sports Analytics.
+- Feature the 12 audit-visible dashboards as polished launch cards.
+- Link to the full Tableau Public profile for all 23 vizzes.
+- Avoid direct embeds for now because Tableau embeds would add performance cost to the portfolio and launch cards preserve speed and responsiveness.
 
 ## Final Top Project Recommendations
 
@@ -75,7 +77,7 @@ Decision:
 5. PulseCredit / Economic Forecasting and Financial Risk
 6. TransitShield
 7. Marketplace Compass / Business Intelligence and ML
-8. Tableau Analytics Collection, once Tableau dashboards are published
+8. Tableau Analytics Collection
 9. Community Development Intelligence, built from housing/civic/community repos
 10. AI Workflow Platform, only after a polished live app exists
 
@@ -84,6 +86,6 @@ Decision:
 - Hero: explicit professional portfolio positioning.
 - Skills: evidence-linked skillsets based on live project screenshots.
 - Projects: EconOS centerpiece, Compet 2026 added, existing strong apps preserved.
-- Tableau: dedicated truthful section with public profile link and planned groups.
+- Tableau: dedicated page with real launch cards and full public profile link.
 - Audit Strategy: compact GitHub classification section.
 - SEO: revised metadata and social preview language.
