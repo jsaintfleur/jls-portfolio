@@ -88,6 +88,9 @@
   .stat{min-height:82px;border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:14px}
   .stat b{display:block;font-size:32px;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.04em}
   .stat span{display:block;margin-top:7px;color:var(--muted);font-size:12.5px}
+  .preview-mosaic{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+  .preview-mosaic img{width:100%;aspect-ratio:1/1.08;object-fit:cover;border:1px solid var(--line);border-radius:10px;background:var(--inset);box-shadow:0 8px 18px rgba(15,23,42,.08)}
+  .preview-mosaic img:nth-child(even){transform:translateY(5px)}
   .proof-list{display:grid;gap:8px;margin:14px 0 0;padding:14px 0 0;border-top:1px solid var(--line);color:var(--soft);font-size:13px}
   .proof-list span{display:flex;gap:8px;align-items:flex-start}
   .proof-list span::before{content:"";flex:0 0 auto;width:8px;height:8px;margin-top:6px;border-radius:3px;background:var(--brand-600)}
@@ -140,7 +143,7 @@
   @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}.motif::before{animation:none}.btn:hover,.product:hover,.product:focus-within{transform:none}}
   @media (min-width:1440px){.wrap{width:min(1240px,calc(100% - 64px))}.motif{width:620px;height:390px}.gallery{gap:22px}}
   @media (max-width:980px){.hero-grid,.split{grid-template-columns:1fr}.motif{width:70vw;opacity:.36}.gallery{grid-template-columns:1fr 1fr}.product{grid-column:auto}.cap-grid{grid-template-columns:minmax(160px,1fr) repeat(6,54px);overflow-x:auto}.proof-card{max-width:620px}}
-  @media (max-width:680px){.wrap{width:min(100% - 32px,1120px)}nav a{display:none}.nav{height:56px}.wordmark{font-size:15px}.hero{padding:26px 0 12px}.hero-grid{gap:18px}.motif{display:none}h1{font-size:38px}.lede{font-size:15.5px;margin-top:13px}.impact-line{font-size:12.5px}.cta{margin-top:16px}.proof-card{padding:14px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.stat{min-height:72px;padding:11px}.stat b{font-size:27px}.stat span{font-size:12px}section{padding:28px 0}.gallery{grid-template-columns:1fr}.section-head{display:block}.section-head .sub{margin-top:8px}.product{padding:12px}.split{gap:14px}.panel{padding:18px}.cap-grid{grid-template-columns:150px repeat(6,50px)}}
+  @media (max-width:680px){.wrap{width:min(100% - 32px,1120px)}nav a{display:none}.nav{height:56px}.wordmark{font-size:15px}.hero{padding:26px 0 12px}.hero-grid{gap:18px}.motif{display:none}h1{font-size:38px}.lede{font-size:15.5px;margin-top:13px}.impact-line{font-size:12.5px}.cta{margin-top:16px}.proof-card{padding:14px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.stat{min-height:72px;padding:11px}.stat b{font-size:27px}.stat span{font-size:12px}.preview-mosaic{grid-template-columns:repeat(3,1fr);gap:6px}.preview-mosaic img{aspect-ratio:16/10;border-radius:8px}.preview-mosaic img:nth-child(even){transform:none}section{padding:28px 0}.gallery{grid-template-columns:1fr}.section-head{display:block}.section-head .sub{margin-top:8px}.product{padding:12px}.split{gap:14px}.panel{padding:18px}.cap-grid{grid-template-columns:150px repeat(6,50px)}}
 </style>
 </head>
 <body>
@@ -185,6 +188,14 @@
           <div class="stat"><b data-count="12" data-suffix="+">12+</b><span>public datasets</span></div>
           <div class="stat"><b data-count="3">3</b><span>geospatial products</span></div>
           <div class="stat"><b data-count="1">1</b><span>validated ML model</span></div>
+        </div>
+        <div class="preview-mosaic" aria-label="Live app preview collage">
+          <img src="assets/thumbs/sheltershield.webp" width="800" height="500" loading="eager" alt="ShelterShield dashboard preview" />
+          <img src="assets/thumbs/careshed.webp" width="800" height="500" loading="eager" alt="CareShed dashboard preview" />
+          <img src="assets/thumbs/pulsecredit.webp" width="800" height="500" loading="eager" alt="PulseCredit dashboard preview" />
+          <img src="assets/thumbs/transitshield.webp" width="800" height="500" loading="lazy" alt="TransitShield dashboard preview" />
+          <img src="assets/thumbs/marketplace-compass.webp" width="800" height="500" loading="lazy" alt="Marketplace Compass dashboard preview" />
+          <img src="assets/thumbs/econos.webp" width="800" height="500" loading="lazy" alt="EconOS dashboard preview" />
         </div>
         <div class="proof-list">
           <span>Every app ships as a live decision tool, not a notebook screenshot.</span>
