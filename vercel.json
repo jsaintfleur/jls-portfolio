@@ -3,15 +3,27 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/",
       "has": [{ "type": "host", "value": "jls-portfolio-zeta.vercel.app" }],
-      "destination": "https://jeanlucs.com/:path*",
+      "destination": "https://jeanlucs.com/",
       "permanent": true
     },
     {
-      "source": "/:path*",
+      "source": "/:path+",
+      "has": [{ "type": "host", "value": "jls-portfolio-zeta.vercel.app" }],
+      "destination": "https://jeanlucs.com/:path+",
+      "permanent": true
+    },
+    {
+      "source": "/",
       "has": [{ "type": "host", "value": "www.jeanlucs.com" }],
-      "destination": "https://jeanlucs.com/:path*",
+      "destination": "https://jeanlucs.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path+",
+      "has": [{ "type": "host", "value": "www.jeanlucs.com" }],
+      "destination": "https://jeanlucs.com/:path+",
       "permanent": true
     }
   ]
