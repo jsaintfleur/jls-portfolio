@@ -1,4 +1,18 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "jls-portfolio-zeta.vercel.app" }],
+      "destination": "https://jeanlucs.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.jeanlucs.com" }],
+      "destination": "https://jeanlucs.com/:path*",
+      "permanent": true
+    }
+  ]
 }
