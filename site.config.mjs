@@ -17,38 +17,46 @@ export const siteConfig = {
 
 export const projectUrls = {
   econos: {
-    url: "https://econos-sooty.vercel.app",
-    status: "needs-custom-domain",
+    url: "https://econos.jeanlucs.com",
+    status: "canonical",
   },
   compet2026: {
-    url: "https://wc2026-xi-gray.vercel.app",
-    status: "needs-custom-domain",
+    url: "https://compet.jeanlucs.com",
+    status: "canonical",
   },
   sheltershield: {
-    url: "https://jls-sheltershield.vercel.app",
-    status: "needs-custom-domain",
+    url: "https://sheltershield.jeanlucs.com",
+    status: "canonical",
   },
   careshed: {
-    url: "https://jls-careshed.vercel.app",
-    status: "needs-custom-domain",
+    url: "https://careshed.jeanlucs.com",
+    status: "canonical",
   },
   pulsecredit: {
-    url: "https://jls-pulsecredit.vercel.app",
-    status: "needs-custom-domain",
+    url: "https://pulsecredit.jeanlucs.com",
+    status: "canonical",
   },
   transitshield: {
-    url: "https://jls-transitshield.vercel.app",
-    status: "needs-custom-domain",
+    url: "https://transitshield.jeanlucs.com",
+    status: "canonical",
   },
   marketplaceCompass: {
-    url: "https://jls-marketplace-compass.vercel.app",
-    status: "needs-custom-domain",
+    url: "https://compass.jeanlucs.com",
+    status: "canonical",
   },
 };
 
 // Hosts that must never appear in production pages.
 export const forbiddenHosts = [
   "jls-portfolio-zeta.vercel.app", // legacy portfolio URL — redirects to jeanlucs.com
+  // Legacy project production URLs — superseded by jeanlucs.com subdomains.
+  "econos-sooty.vercel.app",
+  "wc2026-xi-gray.vercel.app",
+  "jls-sheltershield.vercel.app",
+  "jls-careshed.vercel.app",
+  "jls-pulsecredit.vercel.app",
+  "jls-transitshield.vercel.app",
+  "jls-marketplace-compass.vercel.app",
   "localhost",
   "127.0.0.1",
 ];
