@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Data &amp; Ethics - Jean-Luc Saint-Fleur</title>
+<meta name="description" content="Data sources, attribution, licensing, and integrity practices behind Jean-Luc Saint-Fleur's portfolio: authoritative public data, honored licenses, visible limits, and reproducible pipelines." />
+<meta name="theme-color" content="#142d8c" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Data &amp; Ethics - Jean-Luc Saint-Fleur" />
+<meta property="og:description" content="Data sources, attribution, licensing, and integrity practices behind the portfolio." />
+<meta property="og:image" content="https://jls-portfolio-zeta.vercel.app/assets/social-preview.png" />
+<meta property="og:url" content="https://jls-portfolio-zeta.vercel.app/data-ethics" />
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+<style>
+  :root{
+    color-scheme:light;
+    --ink:#0f172a;--soft:#334155;--muted:#64748b;
+    --canvas:#fbfaf8;--panel:#fff;--inset:#f8fafc;--line:#e2e8f0;
+    --brand:#142d8c;--brand-500:#2a49b8;--brand-text:#102270;--brand-soft:#eef2fc;
+    --font:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  }
+  :root.dark{color-scheme:dark;--ink:#f8fafc;--soft:#cbd5e1;--muted:#94a3b8;--canvas:#070b13;--panel:#111827;--inset:#0b1220;--line:#334155;--brand-text:#7f9ae0;--brand-soft:#0a1642}
+  @media (prefers-color-scheme:dark){:root:not(.light){color-scheme:dark;--ink:#f8fafc;--soft:#cbd5e1;--muted:#94a3b8;--canvas:#070b13;--panel:#111827;--inset:#0b1220;--line:#334155;--brand-text:#7f9ae0;--brand-soft:#0a1642}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--font);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .skip{position:absolute;left:18px;top:-80px;z-index:30;background:var(--brand);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+  .skip:focus{top:14px}
+  .wrap{width:min(1120px,calc(100% - 40px));margin:0 auto}
+  header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--panel) 92%,transparent);backdrop-filter:blur(12px)}
+  .nav{height:60px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{font-weight:700;text-decoration:none;letter-spacing:-.02em}
+  .back{color:var(--brand-text);font-weight:700;text-decoration:none;font-size:14px}
+  main{padding:64px 0 72px}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--brand-text)}
+  h1{font-size:clamp(32px,4.4vw,46px);line-height:1.06;letter-spacing:-.028em;margin:12px 0 0;max-width:24ch}
+  .lede{font-size:16.5px;color:var(--soft);max-width:72ch;margin:16px 0 0;line-height:1.65}
+  h2{font-size:clamp(22px,2.6vw,28px);letter-spacing:-.02em;margin:0 0 8px}
+  .sub{margin:0 0 18px;color:var(--muted);font-size:14.5px;max-width:76ch}
+  section{margin-top:52px}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .panel{border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:24px}
+  .panel h3{margin:0 0 10px;font-size:18px;letter-spacing:-.015em}
+  .panel p,.panel li{color:var(--soft);font-size:14.5px;line-height:1.62}
+  .panel ul{margin:0;padding-left:19px}
+  .panel li{margin:8px 0}
+  .panel li b{color:var(--ink);font-weight:600}
+  /* Source attribution table */
+  .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:760px}
+  caption{text-align:left;color:var(--muted);font-size:13px;padding:14px 18px 0}
+  th{text-align:left;color:var(--brand-text);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:16px 18px 10px;border-bottom:1px solid var(--line)}
+  td{vertical-align:top;color:var(--soft);padding:13px 18px;border-bottom:1px solid var(--line);line-height:1.55}
+  tr:last-child td{border-bottom:0}
+  td b{color:var(--ink);font-weight:600}
+  td a{color:var(--brand-text);font-weight:500;text-decoration:none}
+  td a:hover{text-decoration:underline;text-underline-offset:3px}
+  .note{margin-top:14px;color:var(--muted);font-size:13px;max-width:80ch;line-height:1.6}
+  footer{border-top:1px solid var(--line);margin-top:64px;padding:28px 0;color:var(--muted);font-size:13px}
+  :focus-visible{outline:3px solid color-mix(in srgb,var(--brand) 72%,white);outline-offset:3px;border-radius:8px}
+  @media (max-width:820px){.split{grid-template-columns:1fr}main{padding:40px 0 52px}section{margin-top:40px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap nav" role="navigation" aria-label="Primary">
+    <a class="brand" href="/">Jean-Luc Saint-Fleur</a>
+    <a class="back" href="/">Back to portfolio</a>
+  </div>
+</header>
+<main id="main">
+  <div class="wrap">
+    <section style="margin-top:0" aria-labelledby="page-title">
+      <p class="eyebrow">Data &amp; Ethics</p>
+      <h1 id="page-title">Credibility is the product.</h1>
+      <p class="lede">Every number in this portfolio traces to an authoritative public source, every license and attribution requirement is honored, and every limitation stays visible. This page documents the practices and cites the data providers behind each product.</p>
+    </section>
+
+    <section aria-labelledby="practice-title">
+      <div class="split">
+        <div class="panel">
+          <h3 id="practice-title">Integrity in practice</h3>
+          <p>These aren't aspirations pinned to a wall — they're implemented behaviors. Compet 2026 suppresses any score that falls below its confidence threshold rather than publish bad data when a vendor feed fails. The Global Exchange Planner reports its own negative finding — a naïve baseline beat every forecasting model, so it recommends a risk-managed split instead of fabricating a timing edge. EconOS marks stale series instead of hiding them.</p>
+          <p style="margin-top:12px">The discipline comes from the day job. Nine years of federal compliance — 2 CFR Part 200, subrecipient monitoring, procurement review — is work where a wrong number has real consequences. Software built by someone who signs off on drawdowns treats data integrity as a professional obligation, not a feature.</p>
+        </div>
+        <div class="panel">
+          <h3>Working principles</h3>
+          <ul>
+            <li><b>Only credible public data:</b> federal statistical agencies, city open-data programs, and documented research datasets.</li>
+            <li><b>Licenses honored:</b> non-commercial and attribution terms are flagged in each repository and respected in each product.</li>
+            <li><b>Computed vs. proposed:</b> calculated outputs stay separate from planned enhancements. No fabricated metrics or impact.</li>
+            <li><b>Honest limits:</b> data-sparse geographies, modeled estimates, and baseline comparisons are surfaced, not smoothed over.</li>
+            <li><b>Reproducible where repo-backed:</b> portfolio pipelines rebuild with one command and validate output against schema gates.</li>
+            <li><b>No personal data:</b> products use aggregate public statistics; nothing identifies an individual.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="sources-title">
+      <h2 id="sources-title">Data sources &amp; attribution</h2>
+      <p class="sub">Each provider is cited below in the form it requests, with the license or terms governing reuse and the products that depend on it. Retrieval dates and series-level identifiers are documented in each product's repository.</p>
+      <div class="table-scroll">
+        <table>
+          <caption>Primary data providers used across the portfolio, with licensing terms and dependent products.</caption>
+          <thead>
+            <tr><th scope="col">Provider &amp; dataset</th><th scope="col">License / terms</th><th scope="col">Used in</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>U.S. Census Bureau</b> — American Community Survey (ACS) 5-Year Estimates; decennial census geographies · <a href="https://data.census.gov" target="_blank" rel="noreferrer">data.census.gov</a></td>
+              <td>U.S. public domain (17 U.S.C. § 105)</td>
+              <td>ShelterShield, CareShed, EconOS</td>
+            </tr>
+            <tr>
+              <td><b>U.S. Department of Housing and Urban Development (HUD)</b> — housing and community development datasets · <a href="https://www.huduser.gov/portal/pdrdatas_landing.html" target="_blank" rel="noreferrer">huduser.gov</a></td>
+              <td>U.S. public domain</td>
+              <td>ShelterShield</td>
+            </tr>
+            <tr>
+              <td><b>Centers for Disease Control and Prevention (CDC)</b> — PLACES local health estimates; Social Vulnerability Index · <a href="https://www.cdc.gov/places" target="_blank" rel="noreferrer">cdc.gov/places</a></td>
+              <td>U.S. public domain; cite CDC as source</td>
+              <td>CareShed</td>
+            </tr>
+            <tr>
+              <td><b>Federal Reserve Bank of St. Louis</b> — FRED economic data series · <a href="https://fred.stlouisfed.org" target="_blank" rel="noreferrer">fred.stlouisfed.org</a></td>
+              <td><a href="https://fred.stlouisfed.org/legal" target="_blank" rel="noreferrer">FRED terms of use</a>; series cited with original identifiers</td>
+              <td>EconOS, PulseCredit, Global Exchange Planner</td>
+            </tr>
+            <tr>
+              <td><b>Consumer Financial Protection Bureau (CFPB)</b> — Consumer Complaint Database · <a href="https://www.consumerfinance.gov/data-research/consumer-complaints/" target="_blank" rel="noreferrer">consumerfinance.gov</a></td>
+              <td>U.S. public domain</td>
+              <td>PulseCredit</td>
+            </tr>
+            <tr>
+              <td><b>Metropolitan Transportation Authority (MTA)</b> — ridership and infrastructure open data · <a href="https://www.mta.info/open-data" target="_blank" rel="noreferrer">mta.info/open-data</a></td>
+              <td>MTA open-data terms; attribution to MTA</td>
+              <td>TransitShield</td>
+            </tr>
+            <tr>
+              <td><b>Federal Emergency Management Agency (FEMA)</b> — National Risk Index · <a href="https://hazards.fema.gov/nri" target="_blank" rel="noreferrer">hazards.fema.gov/nri</a></td>
+              <td>U.S. public domain</td>
+              <td>TransitShield</td>
+            </tr>
+            <tr>
+              <td><b>National Oceanic and Atmospheric Administration (NOAA)</b> — climate and severe-weather records · <a href="https://www.ncei.noaa.gov" target="_blank" rel="noreferrer">ncei.noaa.gov</a></td>
+              <td>U.S. public domain; cite NOAA/NCEI</td>
+              <td>TransitShield</td>
+            </tr>
+            <tr>
+              <td><b>NYC Open Data</b> — 311 service requests, housing violations, collisions, civil service lists, and related city datasets · <a href="https://opendata.cityofnewyork.us" target="_blank" rel="noreferrer">opendata.cityofnewyork.us</a></td>
+              <td><a href="https://opendata.cityofnewyork.us/overview/#termsofuse" target="_blank" rel="noreferrer">NYC Open Data terms of use</a></td>
+              <td>Heatstack, NYC Ticket Tracker, Who Gets Hired?, Tableau dashboards</td>
+            </tr>
+            <tr>
+              <td><b>U.S. Bureau of Labor Statistics (BLS)</b> — employment, wage, and price series (directly and via FRED) · <a href="https://www.bls.gov" target="_blank" rel="noreferrer">bls.gov</a></td>
+              <td>U.S. public domain</td>
+              <td>EconOS</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Citation practice: each product references the provider's canonical name, the specific dataset or series identifier, and the retrieval date in its repository documentation and on-page source notes. Government works are public domain under 17 U.S.C. § 105 unless otherwise marked; non-federal providers (MTA, NYC Open Data, FRED) are used under their published terms with attribution. Data are presented for education and analysis — not investment, legal, medical, or policy advice.</p>
+    </section>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Questions about a source or method? <a href="mailto:skjantoine@gmail.com" style="color:var(--brand-text);font-weight:600">skjantoine@gmail.com</a> · <a href="/" style="color:var(--brand-text);font-weight:600">Back to portfolio</a></p>
+  </div>
+</footer>
+<script>
+  (function(){
+    var saved=localStorage.getItem("jls-theme");
+    if(saved==="dark") document.documentElement.classList.add("dark");
+    else if(saved==="light") document.documentElement.classList.add("light");
+  })();
+</script>
+</body>
+</html>
